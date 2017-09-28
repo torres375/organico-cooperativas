@@ -3,9 +3,10 @@ Django==1.11.4
 django-registration==2.2
 django-registration-redux==1.7
 django-tools==0.33.0
-djangorestframework==3.6.4
+django-toolset==0.1.5
 gunicorn==19.7.1
 lxml==3.8.0
+MySQL-python==1.2.5
 olefile==0.44
 Pillow==4.2.1
 psycopg2==2.7.3
