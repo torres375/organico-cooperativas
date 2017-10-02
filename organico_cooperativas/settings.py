@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'index',
+    'cooperativa'
 ]
 
 MIDDLEWARE = [
@@ -78,8 +79,12 @@ WSGI_APPLICATION = 'organico_cooperativas.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'd9kjqu5c0au8ac',
+        'USER': 'kuycnnxniyvjsj',
+        'PASSWORD': '080735c46d3e9f5809453190439242ecbcbc0c85c1b271bb8528c7166d49d600',
+        'HOST': 'ec2-54-163-229-169.compute-1.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
