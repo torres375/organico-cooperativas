@@ -4,11 +4,8 @@ import 'rxjs/add/operator/map';
 import {Observable} from "rxjs/Observable";
 
 @Injectable()
-export class CooperativaService {
+export class CrearCooperativaService {
     constructor(private http: Http) { }
 
-    getCooperativas(): Observable<string[]> {
-        return this.http.get('cooperativalist')
-            .map(response => <string[]>response.json());
-    }
+
 }

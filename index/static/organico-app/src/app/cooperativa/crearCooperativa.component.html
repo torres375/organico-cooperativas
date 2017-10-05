@@ -1,0 +1,45 @@
+<!--Contact Section-->
+<section class="contact-section">
+  <div class="auto-container">
+      <!--Section Title-->
+        <h1>Nueva Cooperativa</h1>
+        <div class="contact-form default-form">
+            <form method="post" id="contact-form">
+                <div class="row clearfix">
+
+                    <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                        <input type="text" name="nombre" value="" placeholder="Nombre *">
+                    </div>
+
+                    <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                        <input type="text" name="nit" value="" placeholder="NIT *">
+                    </div>
+
+                    <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                        <input type="email" name="correo" value="" placeholder="Correo *">
+                    </div>
+
+                    <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                        <input type="text" name="responsable" value="" placeholder="Responsable *">
+                    </div>
+
+                   <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                        <input type="text" name="direccion" value="" placeholder="Dirección *">
+                    </div>
+
+                   <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                        <input type="text" name="zona" value="" placeholder="Zona *">
+                    </div>
+
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                        <textarea name="message" placeholder="Descripción"></textarea>
+                    </div>
+                    <div class="left-align"> * Campos Obligatorios </div>
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                        <div class="text-center"><button (click)="guardarCooperativa( cooperativa )" type="button" class="theme-btn btn-style-two">Guardar</button></div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

@@ -9,7 +9,7 @@ from cooperativa.serializers import CooperativaSerializer
 
 def cooperativasAdmin(request):
     context = {}
-    return render(request, 'listar-cooperativas.html', context)
+    return render(request, 'cooperativas.html', context)
 
 class modeloJSON(HttpResponse):
 	def __init__(self, data, **kwargs):

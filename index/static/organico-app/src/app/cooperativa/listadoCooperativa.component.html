@@ -1,0 +1,42 @@
+<section class="contact-section">
+  <div class="center centered center-block auto-container">
+    <h1>Listado de Cooperativas</h1>
+
+    <table class="table-bordered cart-table table-responsive centered-column auto-container">
+      <thead>
+          <tr>
+              <th>Nombre</th>
+              <th>NIT</th>
+              <th>Correo</th>
+              <th>Responsable</th>
+              <th>Dirección</th>
+              <th>Zona</th>
+              <th>Descripción</th>
+              <th>Acciones</th>
+          </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of cooperativas">
+            <td>{{ item.nombre }}</td>
+            <td>{{ item.nit }}</td>
+            <td>{{ item.correo }}</td>
+            <td>{{ item.responsable }}</td>
+            <td>{{ item.direccion }}</td>
+            <td>{{ item.zona }}</td>
+            <td>{{ item.descripcion }}</td>
+            <td>
+              <a routerLink="/cooperativa/editarCooperativa">
+                <span class="fa fa-edit title-box title" title="Editar Cooperativa"></span>
+              </a>
+              <a routerLink="mapaCooperativa">
+                <span class="fa fa-map-o title-box title" title="Ubicar en el mapa"></span>
+              </a>
+            </td>
+        </tr>
+      </tbody>
+      <tfoot>
+
+      </tfoot>
+    </table>
+  </div>
+</section>
