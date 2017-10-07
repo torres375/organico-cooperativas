@@ -4,42 +4,48 @@
       <!--Section Title-->
         <h1>Nueva Cooperativa</h1>
         <div class="contact-form default-form">
-            <form method="post" id="contact-form">
+
+           <form #form="ngForm" (ngSubmit)="guardarCooperativa(form)">
                 <div class="row clearfix">
 
                     <div class="form-group col-md-6 col-sm-6 col-xs-12">
-                        <input type="text" name="nombre" value="" placeholder="Nombre *">
+                        <input type="text" name="nombre" value="" placeholder="Nombre *" ngModel required>
                     </div>
 
                     <div class="form-group col-md-6 col-sm-6 col-xs-12">
-                        <input type="text" name="nit" value="" placeholder="NIT *">
+                        <input type="text" name="nit" value="" placeholder="NIT *" ngModel required>
                     </div>
 
                     <div class="form-group col-md-6 col-sm-6 col-xs-12">
-                        <input type="email" name="correo" value="" placeholder="Correo *">
+                        <input type="email" name="correo" value="" placeholder="Correo *" ngModel required>
                     </div>
 
                     <div class="form-group col-md-6 col-sm-6 col-xs-12">
-                        <input type="text" name="responsable" value="" placeholder="Responsable *">
+                        <input type="text" name="responsable" value="" placeholder="Responsable *" ngModel required>
                     </div>
 
                    <div class="form-group col-md-6 col-sm-6 col-xs-12">
-                        <input type="text" name="direccion" value="" placeholder="Dirección *">
+                        <input type="text" name="direccion" value="" placeholder="Dirección *" ngModel required>
+                    </div>
+
+                    <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" name="telefono" value="" placeholder="Telefono *" ngModel required>
                     </div>
 
                    <div class="form-group col-md-6 col-sm-6 col-xs-12">
-                        <input type="text" name="zona" value="" placeholder="Zona *">
+                        <input type="text" name="zona" value="" placeholder="Zona *" ngModel required>
                     </div>
 
                     <div class="form-group col-md-12 col-sm-12 col-xs-12">
-                        <textarea name="message" placeholder="Descripción"></textarea>
+                        <textarea name="descripcion" placeholder="Descripción" ngModel></textarea>
                     </div>
                     <div class="left-align"> * Campos Obligatorios </div>
                     <div class="form-group col-md-12 col-sm-12 col-xs-12">
-                        <div class="text-center"><button (click)="guardarCooperativa( cooperativa )" type="button" class="theme-btn btn-style-two">Guardar</button></div>
+                        <div class="text-center"><button  type="submit" class="theme-btn btn-style-two">Guardar</button></div>
                     </div>
                 </div>
             </form>
         </div>
     </div>
 </section>
+0

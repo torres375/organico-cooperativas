@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
+import json
 from django.http import HttpResponse, JsonResponse
 from rest_framework.renderers import JSONRenderer
 from cooperativa.models import Cooperativa
@@ -23,3 +24,22 @@ def cooperativasList(request):
         cooperativas = Cooperativa.objects.all()
         serializer = CooperativaSerializer(cooperativas, many=True)
         return modeloJSON(serializer.data)
+
+@csrf_exempt
+def guardarCooperativa(request):
+    respuesta = False
+    if (request.method == 'POST'):
+        cooperativaPost = json.loads(request.body)
+        cooperativa = Cooperativa.objects.create(nombre=cooperativaPost["nombre"],
+                                                 nit=cooperativaPost["nit"],
+                                                 descripcion=cooperativaPost["descripcion"],
+                                                 zona=cooperativaPost["zona"],
+                                                 responsable=cooperativaPost["responsable"],
+                                                 correo=cooperativaPost["correo"],
+                                                 direccion=cooperativaPost["direccion"],
+                                                 telefono=cooperativaPost["telefono"],
+                                                 );
+
+        cooperativa.save()
+        respuesta = True
+    return modeloJSON(respuesta)

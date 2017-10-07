@@ -24,5 +24,5 @@ urlpatterns = [
     url(r'^crearCooperativa/$', views.cooperativasAdmin, name="crear_cooperativa"),
     url(r'^listadoCooperativa/$', views.cooperativasAdmin, name="listado_cooperativa"),
     url(r'^cooperativalist$', views.cooperativasList, name="cooperativas_list"),
-    url(r'^mapaCooperativa/$', views.cooperativasAdmin, name="mapa_cooperativa")
+    url(r'^guardarCooperativa/$', views.guardarCooperativa, name="guardar_cooperativa")
 ]
