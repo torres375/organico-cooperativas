@@ -8,12 +8,14 @@ import { APP_BASE_HREF } from '@angular/common';
 import { AppComponent } from './app.component';
 import { ListadoCooperativaComponent } from './cooperativa/listadoCooperativa.component';
 import { CrearCooperativaComponent } from './cooperativa/crearCooperativa.component';
+import { ProductorRegistroComponent } from './productor/productorRegistro.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListadoCooperativaComponent,
-    CrearCooperativaComponent
+    CrearCooperativaComponent,
+    ProductorRegistroComponent
   ],
   imports: [
     BrowserModule,
@@ -31,6 +33,10 @@ import { CrearCooperativaComponent } from './cooperativa/crearCooperativa.compon
       {
         path: 'cooperativa/editarCooperativa',
         component: CrearCooperativaComponent
+      },
+      {
+        path: 'productor/registro',
+        component: ProductorRegistroComponent
       }
     ])
   ],

@@ -1,0 +1,28 @@
+input[type="file"]{
+  margin: 0 auto;
+  border: none;
+}
+
+input, select{
+  border: solid 1px #DDD;
+  border-radius: 5px;
+}
+
+.productor-form .form-item{
+  text-align: left;
+  width: 630px;
+  margin: 5px auto 0;
+  display: block;
+
+}
+
+.productor-form .form-item > label{
+  width: 300px;
+  text-align: right;
+}
+
+.productor-form .form-item > input, .productor-form .form-item > select{
+  width: 300px;
+  padding: 5px;
+  box-sizing: border-box;
+}

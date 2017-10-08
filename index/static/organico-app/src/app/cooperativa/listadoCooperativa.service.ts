@@ -9,7 +9,7 @@ export class ListadoCooperativaService {
     }
 
     getCooperativas(): Observable<string[]> {
-        return this.http.get('cooperativalist')
+        return this.http.get('/cooperativa/cooperativalist')
             .map(response => <string[]>response.json());
 
     }
