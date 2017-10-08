@@ -11,6 +11,8 @@ class Cooperativa(models.Model):
     responsable = models.CharField(max_length=70)
     nit = models.CharField(max_length=70)
     correo = models.CharField(max_length=70)
+    telefono = models.CharField(max_length=70)
+    direccion = models.CharField(max_length=100)
 
     class Meta:
         verbose_name = 'Cooperativa'
