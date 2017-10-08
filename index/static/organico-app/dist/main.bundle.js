@@ -25,7 +25,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, ".ng-valid[required] {\r\n  border-left: 5px solid #42A948; /* green */\r\n}\r\n\r\n.ng-invalid {\r\n  border-left: 5px solid #a94442 !important; /* red */\r\n  border-color:  #a94442 !important; /* red */\r\n  box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(169,68,66,.6) !important;\r\n}\r\n", ""]);
 
 // exports
 
@@ -145,7 +145,7 @@ AppModule = __decorate([
 /***/ "../../../../../src/app/cooperativa/crearCooperativa.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!--Contact Section-->\r\n<section class=\"contact-section\">\r\n  <div class=\"auto-container\">\r\n      <!--Section Title-->\r\n        <h1>Nueva Cooperativa</h1>\r\n        <div class=\"contact-form default-form\">\r\n\r\n           <form #form=\"ngForm\" (ngSubmit)=\"guardarCooperativa(form)\">\r\n                <div class=\"row clearfix\">\r\n\r\n                    <div class=\"form-group col-md-6 col-sm-6 col-xs-12\">\r\n                        <input type=\"text\" name=\"nombre\" value=\"\" placeholder=\"Nombre *\" ngModel required>\r\n                    </div>\r\n\r\n                    <div class=\"form-group col-md-6 col-sm-6 col-xs-12\">\r\n                        <input type=\"text\" name=\"nit\" value=\"\" placeholder=\"NIT *\" ngModel required>\r\n                    </div>\r\n\r\n                    <div class=\"form-group col-md-6 col-sm-6 col-xs-12\">\r\n                        <input type=\"email\" name=\"correo\" value=\"\" placeholder=\"Correo *\" ngModel required>\r\n                    </div>\r\n\r\n                    <div class=\"form-group col-md-6 col-sm-6 col-xs-12\">\r\n                        <input type=\"text\" name=\"responsable\" value=\"\" placeholder=\"Responsable *\" ngModel required>\r\n                    </div>\r\n\r\n                   <div class=\"form-group col-md-6 col-sm-6 col-xs-12\">\r\n                        <input type=\"text\" name=\"direccion\" value=\"\" placeholder=\"Dirección *\" ngModel required>\r\n                    </div>\r\n\r\n                    <div class=\"form-group col-md-6 col-sm-6 col-xs-12\">\r\n                          <input type=\"text\" name=\"telefono\" value=\"\" placeholder=\"Telefono *\" ngModel required>\r\n                    </div>\r\n\r\n                   <div class=\"form-group col-md-6 col-sm-6 col-xs-12\">\r\n                        <input type=\"text\" name=\"zona\" value=\"\" placeholder=\"Zona *\" ngModel required>\r\n                    </div>\r\n\r\n                    <div class=\"form-group col-md-12 col-sm-12 col-xs-12\">\r\n                        <textarea name=\"descripcion\" placeholder=\"Descripción\" ngModel></textarea>\r\n                    </div>\r\n                    <div class=\"left-align\"> * Campos Obligatorios </div>\r\n                    <div class=\"form-group col-md-12 col-sm-12 col-xs-12\">\r\n                        <div class=\"text-center\"><button  type=\"submit\" class=\"theme-btn btn-style-two\">Guardar</button></div>\r\n                    </div>\r\n                </div>\r\n            </form>\r\n        </div>\r\n    </div>\r\n</section>\r\n0\r\n"
+module.exports = "<!--Contact Section-->\r\n<section class=\"contact-section\">\r\n  <div class=\"auto-container\">\r\n      <!--Section Title-->\r\n        <h1>Nueva Cooperativa</h1>\r\n        <div class=\"contact-form default-form\">\r\n\r\n           <form #formCooperativa=\"ngForm\" (ngSubmit)=\"guardarCooperativa(formCooperativa)\">\r\n                <div class=\"row clearfix\">\r\n\r\n                    <div class=\"form-group col-md-6 col-sm-6 col-xs-12\">\r\n                        <input ngControl=\"nombre\" type=\"text\" name=\"nombre\" value=\"\" placeholder=\"Nombre *\" ngModel required >\r\n                    </div>\r\n\r\n                    <div class=\"form-group col-md-6 col-sm-6 col-xs-12\">\r\n                        <input type=\"text\" name=\"nit\" value=\"\" placeholder=\"NIT *\" ngModel required>\r\n                    </div>\r\n\r\n                    <div class=\"form-group col-md-6 col-sm-6 col-xs-12\">\r\n                        <input type=\"email\" name=\"correo\" value=\"\" placeholder=\"Correo *\" ngModel required>\r\n                    </div>\r\n\r\n                    <div class=\"form-group col-md-6 col-sm-6 col-xs-12\">\r\n                        <input type=\"text\" name=\"responsable\" value=\"\" placeholder=\"Responsable *\" ngModel required>\r\n                    </div>\r\n\r\n                   <div class=\"form-group col-md-6 col-sm-6 col-xs-12\">\r\n                        <input type=\"text\" name=\"direccion\" value=\"\" placeholder=\"Dirección *\" ngModel required>\r\n                    </div>\r\n\r\n                    <div class=\"form-group col-md-6 col-sm-6 col-xs-12\">\r\n                          <input type=\"text\" name=\"telefono\" value=\"\" placeholder=\"Telefono *\" ngModel required>\r\n                    </div>\r\n\r\n                   <div class=\"form-group col-md-6 col-sm-6 col-xs-12\">\r\n                        <input type=\"text\" name=\"zona\" value=\"\" placeholder=\"Zona *\" ngModel required>\r\n                    </div>\r\n\r\n                    <div class=\"form-group col-md-12 col-sm-12 col-xs-12\">\r\n                        <textarea name=\"descripcion\" placeholder=\"Descripción\" ngModel></textarea>\r\n                    </div>\r\n                  <div class=\"form-group col-md-12 col-sm-12 col-xs-12 text-left\" ><span>* Campos obligatorios</span></div>\r\n\r\n\r\n                    <div class=\"form-group col-md-12 col-sm-12 col-xs-12\">\r\n                        <div class=\"text-center\"><button [disabled]=\"!formCooperativa.valid\" type=\"submit\" class=\"theme-btn btn-style-two ui-state-disabled\">Guardar</button></div>\r\n                    </div>\r\n\r\n                </div>\r\n\r\n            </form>\r\n        </div>\r\n    </div>\r\n</section>\r\n\r\n"
 
 /***/ }),
 
@@ -169,15 +169,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var CrearCooperativaComponent = (function () {
     function CrearCooperativaComponent(crearCooperativaServices) {
-        //this.nombre = "rafa";
         this.crearCooperativaServices = crearCooperativaServices;
         this.title = 'Crear cooperativa';
     }
-    CrearCooperativaComponent.prototype.guardarCooperativa = function (form) {
-        console.log(form.value); // { first: '', last: '' }
-        console.log(form.valid); // false
-        var resultado = this.crearCooperativaServices.guardarCooperativa(form.value).subscribe();
-        console.log(resultado);
+    CrearCooperativaComponent.prototype.guardarCooperativa = function (formCooperativa) {
+        //console.log(formCooperativa.value);
+        //console.log(formCooperativa.valid);
+        //console.lo
+        if (formCooperativa.valid) {
+            var resultado = this.crearCooperativaServices.guardarCooperativa(formCooperativa.value).subscribe();
+            if (resultado) {
+                alert("Datos guardados correctamente");
+            }
+            else {
+                alert("Error almacenando datos");
+            }
+        }
+        else {
+            alert("Por favor llene todos los campos que son obligatorios. (*) ");
+        }
     };
     return CrearCooperativaComponent;
 }());
