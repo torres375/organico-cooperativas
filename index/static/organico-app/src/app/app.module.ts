@@ -9,7 +9,6 @@ import { AppComponent } from './app.component';
 import { ListadoCooperativaComponent } from './cooperativa/listadoCooperativa.component';
 import { CrearCooperativaComponent } from './cooperativa/crearCooperativa.component';
 import { ProductorRegistroComponent } from './productor/productorRegistro.component';
-import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
