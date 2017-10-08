@@ -25,7 +25,7 @@ SECRET_KEY = '_14%*x9q_g-(*(wxfeq$2#1mkt6r4*-_yxhiid4dgmo6y5*y6m'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['organico-cooperativas.herokuapp.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['organico-cooperativas.herokuapp.com', 'localhost', '127.0.0.1', 'localhost:*', '127.0.0.1:*',]
 
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'index',
-    'cooperativa'
+    'cooperativa',
+    'productor'
 ]
 
 MIDDLEWARE = [
@@ -132,3 +133,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(PROJECT_ROOT, 'static'),
 )
+
+REST_FRAMEWORK = {
+'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.AllowAny',),
+}
