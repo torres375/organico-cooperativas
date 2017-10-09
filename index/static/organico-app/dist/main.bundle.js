@@ -121,7 +121,7 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
             __WEBPACK_IMPORTED_MODULE_2__angular_http__["c" /* HttpModule */],
             __WEBPACK_IMPORTED_MODULE_4__angular_forms__["a" /* FormsModule */],
-            __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* RouterModule */].forRoot([
+            __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* RouterModule */].forRoot([
                 {
                     path: 'cooperativa/crearCooperativa',
                     component: __WEBPACK_IMPORTED_MODULE_8__cooperativa_crearCooperativa_component__["a" /* CrearCooperativaComponent */]
@@ -152,7 +152,7 @@ AppModule = __decorate([
 /***/ "../../../../../src/app/cooperativa/crearCooperativa.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!--Contact Section-->\r\n<section class=\"contact-section\">\r\n  <div class=\"auto-container\">\r\n      <!--Section Title-->\r\n        <h1>Nueva Cooperativa</h1>\r\n        <div class=\"contact-form default-form\">\r\n\r\n           <form #formCooperativa=\"ngForm\" (ngSubmit)=\"guardarCooperativa(formCooperativa)\">\r\n                <div class=\"row clearfix\">\r\n\r\n                    <div class=\"form-group col-md-6 col-sm-6 col-xs-12\">\r\n                        <input ngControl=\"nombre\" type=\"text\" name=\"nombre\" value=\"\" placeholder=\"Nombre *\" ngModel required >\r\n                    </div>\r\n\r\n                    <div class=\"form-group col-md-6 col-sm-6 col-xs-12\">\r\n                        <input type=\"text\" name=\"nit\" value=\"\" placeholder=\"NIT *\" ngModel required>\r\n                    </div>\r\n\r\n                    <div class=\"form-group col-md-6 col-sm-6 col-xs-12\">\r\n                        <input type=\"email\" name=\"correo\" value=\"\" placeholder=\"Correo *\" ngModel required>\r\n                    </div>\r\n\r\n                    <div class=\"form-group col-md-6 col-sm-6 col-xs-12\">\r\n                        <input type=\"text\" name=\"responsable\" value=\"\" placeholder=\"Responsable *\" ngModel required>\r\n                    </div>\r\n\r\n                   <div class=\"form-group col-md-6 col-sm-6 col-xs-12\">\r\n                        <input type=\"text\" name=\"direccion\" value=\"\" placeholder=\"Dirección *\" ngModel required>\r\n                    </div>\r\n\r\n                    <div class=\"form-group col-md-6 col-sm-6 col-xs-12\">\r\n                          <input type=\"text\" name=\"telefono\" value=\"\" placeholder=\"Telefono *\" ngModel required>\r\n                    </div>\r\n\r\n                   <div class=\"form-group col-md-6 col-sm-6 col-xs-12\">\r\n                        <input type=\"text\" name=\"zona\" value=\"\" placeholder=\"Zona *\" ngModel required>\r\n                    </div>\r\n\r\n                    <div class=\"form-group col-md-12 col-sm-12 col-xs-12\">\r\n                        <textarea name=\"descripcion\" placeholder=\"Descripción\" ngModel></textarea>\r\n                    </div>\r\n                  <div class=\"form-group col-md-12 col-sm-12 col-xs-12 text-left\" ><span>* Campos obligatorios</span></div>\r\n\r\n\r\n                    <div class=\"form-group col-md-12 col-sm-12 col-xs-12\">\r\n                        <div class=\"text-center\"><button [disabled]=\"!formCooperativa.valid\" type=\"submit\" class=\"theme-btn btn-style-two ui-state-disabled\">Guardar</button></div>\r\n                    </div>\r\n\r\n                </div>\r\n\r\n            </form>\r\n        </div>\r\n    </div>\r\n</section>\r\n\r\n"
+module.exports = "<!--Contact Section-->\r\n<section class=\"contact-section\">\r\n  <div class=\"auto-container\">\r\n      <!--Section Title-->\r\n        <h1>Nueva Cooperativa</h1>\r\n        <div class=\"contact-form default-form\">\r\n\r\n           <form #formCooperativa=\"ngForm\" (ngSubmit)=\"guardarCooperativa(formCooperativa)\">\r\n                <div class=\"row clearfix\">\r\n\r\n                    <div class=\"form-group col-md-6 col-sm-6 col-xs-12\">\r\n                        <input #nombre=\"ngModel\" [ngClass]=\"{'error':!nombre.valid && envioFormCooperativa}\" type=\"text\" name=\"nombre\" value=\"\" placeholder=\"* Nombre [Solo letras]\" ngModel required maxlength=\"70\"  >\r\n                    </div>\r\n\r\n                    <div class=\"form-group col-md-6 col-sm-6 col-xs-12\">\r\n                        <input #nit=\"ngModel\" [ngClass]=\"{'error':!nit.valid && envioFormCooperativa}\" type=\"text\" name=\"nit\" value=\"\" placeholder=\"* NIT [Solo numeros]\" ngModel required maxlength=\"70\" pattern=\"[0-9-]*\">\r\n                    </div>\r\n\r\n                    <div class=\"form-group col-md-6 col-sm-6 col-xs-12\">\r\n                        <input #correo=\"ngModel\" [ngClass]=\"{'error':!correo.valid && envioFormCooperativa}\" type=\"email\" name=\"correo\" value=\"\" placeholder=\"* Correo [text@texto]\" ngModel required pattern=\"^\\w+([\\.-]?\\w+)*@\\w+([\\.-]?\\w+)*(\\.\\w{2,3})+$\">\r\n                    </div>\r\n\r\n                    <div class=\"form-group col-md-6 col-sm-6 col-xs-12\">\r\n                        <input #responsable=\"ngModel\" [ngClass]=\"{'error':!responsable.valid && envioFormCooperativa}\" type=\"text\" name=\"responsable\" value=\"\" placeholder=\"* Responsable [Solo letras]\" ngModel required maxlength=\"70\" pattern=\"[a-zA-Z ]*\">\r\n                    </div>\r\n\r\n                   <div class=\"form-group col-md-6 col-sm-6 col-xs-12\">\r\n                        <input #direccion=\"ngModel\" [ngClass]=\"{'error':!direccion.valid && envioFormCooperativa}\" type=\"text\" name=\"direccion\" value=\"\" placeholder=\"* Dirección\" ngModel required maxlength=\"255\">\r\n                    </div>\r\n\r\n                    <div class=\"form-group col-md-6 col-sm-6 col-xs-12\">\r\n                          <input #telefono=\"ngModel\" [ngClass]=\"{'error':!telefono.valid && envioFormCooperativa}\" type=\"text\" name=\"telefono\" value=\"\" placeholder=\"* Telefono\" ngModel required maxlength=\"70\" pattern=\"[0-9-()+ ]*\">\r\n                    </div>\r\n\r\n                   <div class=\"form-group col-md-6 col-sm-6 col-xs-12\">\r\n                        <input #zona=\"ngModel\" [ngClass]=\"{'error':!zona.valid && envioFormCooperativa}\" type=\"text\" name=\"zona\" value=\"\" placeholder=\"* Zona \" ngModel required maxlength=\"70\">\r\n                    </div>\r\n\r\n                    <div class=\"form-group col-md-12 col-sm-12 col-xs-12\">\r\n                        <textarea #descripcion=\"ngModel\" [ngClass]=\"{'error':!descripcion.valid && envioFormCooperativa}\" name=\"descripcion\" placeholder=\"Descripción [Máx 550 caracteres]\" ngModel maxlength=\"550\"></textarea>\r\n                    </div>\r\n                    <div class=\"form-group col-md-12 col-sm-12 col-xs-12 text-left\" >\r\n                      <span *ngIf=\"!formCooperativa.valid && !envioFormCooperativa\"> * Campos obligatorios</span>\r\n                      <br>\r\n                      <label *ngIf=\"!formCooperativa.valid && envioFormCooperativa\" class=\"error\">* Existen campos vacios que son obligatorios o existen campos invalidos.</label>\r\n                    </div>\r\n\r\n                    <div class=\"form-group col-md-12 col-sm-12 col-xs-12\">\r\n                        <div class=\"text-center\"><button  type=\"submit\" class=\"theme-btn btn-style-two ui-state-disabled\">Guardar</button></div>\r\n                    </div>\r\n\r\n                </div>\r\n\r\n            </form>\r\n        </div>\r\n    </div>\r\n</section>\r\n\r\n"
 
 /***/ }),
 
@@ -162,7 +162,8 @@ module.exports = "<!--Contact Section-->\r\n<section class=\"contact-section\">\
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CrearCooperativaComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__crearCooperativa_service__ = __webpack_require__("../../../../../src/app/cooperativa/crearCooperativa.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__crearCooperativa_service__ = __webpack_require__("../../../../../src/app/cooperativa/crearCooperativa.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -174,26 +175,30 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 var CrearCooperativaComponent = (function () {
-    function CrearCooperativaComponent(crearCooperativaServices) {
+    function CrearCooperativaComponent(crearCooperativaServices, router) {
         this.crearCooperativaServices = crearCooperativaServices;
+        this.router = router;
         this.title = 'Crear cooperativa';
+        this.envioFormCooperativa = false;
     }
     CrearCooperativaComponent.prototype.guardarCooperativa = function (formCooperativa) {
         //console.log(formCooperativa.value);
         //console.log(formCooperativa.valid);
-        //console.lo
+        this.envioFormCooperativa = true;
         if (formCooperativa.valid) {
             var resultado = this.crearCooperativaServices.guardarCooperativa(formCooperativa.value).subscribe();
             if (resultado) {
                 alert("Datos guardados correctamente");
+                this.router.navigateByUrl('cooperativa/listadoCooperativa');
             }
             else {
                 alert("Error almacenando datos");
             }
         }
         else {
-            alert("Por favor llene todos los campos que son obligatorios. (*) ");
+            //alert("Por favor llene todos los campos que son obligatorios. (*) ");
         }
     };
     return CrearCooperativaComponent;
@@ -203,13 +208,13 @@ CrearCooperativaComponent = __decorate([
         //selector: 'app-crearCooperativa',
         template: __webpack_require__("../../../../../src/app/cooperativa/crearCooperativa.component.html"),
         providers: [
-            __WEBPACK_IMPORTED_MODULE_1__crearCooperativa_service__["a" /* CrearCooperativaService */]
+            __WEBPACK_IMPORTED_MODULE_2__crearCooperativa_service__["a" /* CrearCooperativaService */]
         ]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__crearCooperativa_service__["a" /* CrearCooperativaService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__crearCooperativa_service__["a" /* CrearCooperativaService */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__crearCooperativa_service__["a" /* CrearCooperativaService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__crearCooperativa_service__["a" /* CrearCooperativaService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]) === "function" && _b || Object])
 ], CrearCooperativaComponent);
 
-var _a;
+var _a, _b;
 //# sourceMappingURL=crearCooperativa.component.js.map
 
 /***/ }),
@@ -423,7 +428,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/productor/productorRegistro.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"productor-form\">\n  <div class=\"form-item\">\n    <label for=\"nombreProductor\">Nombre*: </label>\n    <input type=\"text\" id=\"nombreProductor\" placeholder=\"Nombre\" [(ngModel)]=\"productor.nombre\"/>\n  </div>\n  <div class=\"form-item\">\n    <label for=\"descripcionProductor\">Acerca de m&iacute;*: </label>\n    <input type=\"text\" id=\"descripcionProductor\" placeholder=\"Acerca de m&iacute;\" [(ngModel)]=\"productor.descripcion\"/>\n  </div>\n  <div class=\"form-item\">\n    <label for=\"tipoDocumento\">Tipo de documento*: </label>\n    <select id=\"tipoDocumento\" [(ngModel)]=\"productor.tipo_documento\">\n      <option value=\"-1\">-- Tipo de Documento --</option>\n      <option value=\"1\">C&eacute;dula de ciudadan&iacute;a</option>\n    </select>\n  </div>\n  <div class=\"form-item\">\n    <label for=\"numeroDocumentoProductor\">N&uacute;mero de documento*: </label>\n    <input type=\"text\" id=\"numeroDocumentoProductor\" placeholder=\"N&uacute;mero de documento\" [(ngModel)]=\"productor.documento\"/>\n  </div>\n  <div class=\"form-item\">\n    <label for=\"direccionProductor\">Direcci&oacute;n*: </label>\n    <input type=\"text\" id=\"direccionProductor\" placeholder=\"Direcci&oacute;n\" [(ngModel)]=\"productor.direccion\"/>\n  </div>\n  <div class=\"form-item\">\n    <label for=\"cooperativa\">Cooperativa*: </label>\n    <select id=\"cooperativa\" [(ngModel)]=\"productor.cooperativa\">\n      <option value=\"-1\">-- Cooperativa --</option>\n      <option *ngFor=\"let cooperativa of cooperativas\" value=\"{{cooperativa.id}}\">{{cooperativa.nombre}}</option>\n    </select>\n  </div>\n  <div>\n    <label for=\"foto\">Foto*:</label>\n    <input type=\"file\" #entradaFoto (change)=\"loadFoto(entradaFoto)\">\n    <img src=\"{{productor.foto}}\" width=\"200\" >\n  </div>\n  <div>\n    <button (click)=\"saveProductor()\">Env&iacute;ar datos</button>\n  </div>\n</div>\n"
+module.exports = "<div class=\"productor-form\">\r\n  <div class=\"form-item\">\r\n    <label for=\"nombreProductor\">Nombre*: </label>\r\n    <input type=\"text\" id=\"nombreProductor\" placeholder=\"Nombre\" />\r\n  </div>\r\n  <div class=\"form-item\">\r\n    <label for=\"descripcionProductor\">Acerca de m&iacute;*: </label>\r\n    <input type=\"text\" id=\"descripcionProductor\" placeholder=\"Acerca de m&iacute;\" [(ngModel)]=\"productor.descripcion\"/>\r\n  </div>\r\n  <div class=\"form-item\">\r\n    <label for=\"tipoDocumento\">Tipo de documento*: </label>\r\n    <select id=\"tipoDocumento\" [(ngModel)]=\"productor.tipo_documento\">\r\n      <option value=\"-1\">-- Tipo de Documento --</option>\r\n      <option value=\"1\">C&eacute;dula de ciudadan&iacute;a</option>\r\n    </select>\r\n  </div>\r\n  <div class=\"form-item\">\r\n    <label for=\"numeroDocumentoProductor\">N&uacute;mero de documento*: </label>\r\n    <input type=\"text\" id=\"numeroDocumentoProductor\" placeholder=\"N&uacute;mero de documento\" [(ngModel)]=\"productor.documento\"/>\r\n  </div>\r\n  <div class=\"form-item\">\r\n    <label for=\"direccionProductor\">Direcci&oacute;n*: </label>\r\n    <input type=\"text\" id=\"direccionProductor\" placeholder=\"Direcci&oacute;n\" [(ngModel)]=\"productor.direccion\"/>\r\n  </div>\r\n  <div class=\"form-item\">\r\n    <label for=\"cooperativa\">Cooperativa*: </label>\r\n    <select id=\"cooperativa\" [(ngModel)]=\"productor.cooperativa\">\r\n      <option value=\"-1\">-- Cooperativa --</option>\r\n      <option *ngFor=\"let cooperativa of cooperativas\" value=\"{{cooperativa.id}}\">{{cooperativa.nombre}}</option>\r\n    </select>\r\n  </div>\r\n  <div>\r\n    <label for=\"foto\">Foto*:</label>\r\n    <input type=\"file\" #entradaFoto (change)=\"loadFoto(entradaFoto)\">\r\n    <img src=\"{{productor.foto}}\" width=\"200\" >\r\n  </div>\r\n  <div>\r\n    <button (click)=\"saveProductor()\">Env&iacute;ar datos</button>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 

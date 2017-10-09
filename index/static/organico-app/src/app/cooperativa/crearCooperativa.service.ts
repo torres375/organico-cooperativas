@@ -12,7 +12,6 @@ export class CrearCooperativaService {
       let options = new RequestOptions({ headers: headers });
       let body = JSON.stringify( cooperativa );
 
-
       return this.http.post('guardarCooperativa/', body, options).map(response => response.json());
     }
 
