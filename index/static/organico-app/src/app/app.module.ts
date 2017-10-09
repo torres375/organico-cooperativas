@@ -9,13 +9,15 @@ import { AppComponent } from './app.component';
 import { ListadoCooperativaComponent } from './cooperativa/listadoCooperativa.component';
 import { CrearCooperativaComponent } from './cooperativa/crearCooperativa.component';
 import { ProductorRegistroComponent } from './productor/productorRegistro.component';
+import { ProductorDetalleComponent } from './productor/productor-detalle/productor-detalle.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListadoCooperativaComponent,
     CrearCooperativaComponent,
-    ProductorRegistroComponent
+    ProductorRegistroComponent,
+    ProductorDetalleComponent
   ],
   imports: [
     BrowserModule,
@@ -37,6 +39,10 @@ import { ProductorRegistroComponent } from './productor/productorRegistro.compon
       {
         path: 'productor/registro',
         component: ProductorRegistroComponent
+      },
+      {
+        path: 'productor/detalle/:id',
+        component: ProductorDetalleComponent
       }
     ])
   ],

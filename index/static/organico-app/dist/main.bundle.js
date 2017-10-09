@@ -38,7 +38,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!--The content below is only a placeholder and can be replaced.-->\r\n<div style=\"text-align:center\">\r\n  <!--<h1>\r\n    Cooperativas {{title}}!\r\n  </h1>-->\r\n    <!--<app-cooperativa ></app-cooperativa>\r\n    <app-crearCooperativa></app-crearCooperativa>-->\r\n    <router-outlet></router-outlet>\r\n</div>\r\n\r\n"
+module.exports = "<!--The content below is only a placeholder and can be replaced.-->\n<div style=\"text-align:center\">\n  <!--<h1>\n    Cooperativas {{title}}!\n  </h1>-->\n    <!--<app-cooperativa ></app-cooperativa>\n    <app-crearCooperativa></app-crearCooperativa>-->\n    <router-outlet></router-outlet>\n</div>\n\n"
 
 /***/ }),
 
@@ -88,12 +88,14 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__cooperativa_listadoCooperativa_component__ = __webpack_require__("../../../../../src/app/cooperativa/listadoCooperativa.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__cooperativa_crearCooperativa_component__ = __webpack_require__("../../../../../src/app/cooperativa/crearCooperativa.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__productor_productorRegistro_component__ = __webpack_require__("../../../../../src/app/productor/productorRegistro.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__productor_productor_detalle_productor_detalle_component__ = __webpack_require__("../../../../../src/app/productor/productor-detalle/productor-detalle.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -115,7 +117,8 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* AppComponent */],
             __WEBPACK_IMPORTED_MODULE_7__cooperativa_listadoCooperativa_component__["a" /* ListadoCooperativaComponent */],
             __WEBPACK_IMPORTED_MODULE_8__cooperativa_crearCooperativa_component__["a" /* CrearCooperativaComponent */],
-            __WEBPACK_IMPORTED_MODULE_9__productor_productorRegistro_component__["a" /* ProductorRegistroComponent */]
+            __WEBPACK_IMPORTED_MODULE_9__productor_productorRegistro_component__["a" /* ProductorRegistroComponent */],
+            __WEBPACK_IMPORTED_MODULE_10__productor_productor_detalle_productor_detalle_component__["a" /* ProductorDetalleComponent */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -137,6 +140,10 @@ AppModule = __decorate([
                 {
                     path: 'productor/registro',
                     component: __WEBPACK_IMPORTED_MODULE_9__productor_productorRegistro_component__["a" /* ProductorRegistroComponent */]
+                },
+                {
+                    path: 'productor/detalle/:id',
+                    component: __WEBPACK_IMPORTED_MODULE_10__productor_productor_detalle_productor_detalle_component__["a" /* ProductorDetalleComponent */]
                 }
             ])
         ],
@@ -152,7 +159,7 @@ AppModule = __decorate([
 /***/ "../../../../../src/app/cooperativa/crearCooperativa.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!--Contact Section-->\r\n<section class=\"contact-section\">\r\n  <div class=\"auto-container\">\r\n      <!--Section Title-->\r\n        <h1>Nueva Cooperativa</h1>\r\n        <div class=\"contact-form default-form\">\r\n\r\n           <form #form=\"ngForm\" (ngSubmit)=\"guardarCooperativa(form)\">\r\n                <div class=\"row clearfix\">\r\n\r\n                    <div class=\"form-group col-md-6 col-sm-6 col-xs-12\">\r\n                        <input type=\"text\" name=\"nombre\" value=\"\" placeholder=\"Nombre *\" ngModel required>\r\n                    </div>\r\n\r\n                    <div class=\"form-group col-md-6 col-sm-6 col-xs-12\">\r\n                        <input type=\"text\" name=\"nit\" value=\"\" placeholder=\"NIT *\" ngModel required>\r\n                    </div>\r\n\r\n                    <div class=\"form-group col-md-6 col-sm-6 col-xs-12\">\r\n                        <input type=\"email\" name=\"correo\" value=\"\" placeholder=\"Correo *\" ngModel required>\r\n                    </div>\r\n\r\n                    <div class=\"form-group col-md-6 col-sm-6 col-xs-12\">\r\n                        <input type=\"text\" name=\"responsable\" value=\"\" placeholder=\"Responsable *\" ngModel required>\r\n                    </div>\r\n\r\n                   <div class=\"form-group col-md-6 col-sm-6 col-xs-12\">\r\n                        <input type=\"text\" name=\"direccion\" value=\"\" placeholder=\"Dirección *\" ngModel required>\r\n                    </div>\r\n\r\n                    <div class=\"form-group col-md-6 col-sm-6 col-xs-12\">\r\n                          <input type=\"text\" name=\"telefono\" value=\"\" placeholder=\"Telefono *\" ngModel required>\r\n                    </div>\r\n\r\n                   <div class=\"form-group col-md-6 col-sm-6 col-xs-12\">\r\n                        <input type=\"text\" name=\"zona\" value=\"\" placeholder=\"Zona *\" ngModel required>\r\n                    </div>\r\n\r\n                    <div class=\"form-group col-md-12 col-sm-12 col-xs-12\">\r\n                        <textarea name=\"descripcion\" placeholder=\"Descripción\" ngModel></textarea>\r\n                    </div>\r\n                    <div class=\"left-align\"> * Campos Obligatorios </div>\r\n                    <div class=\"form-group col-md-12 col-sm-12 col-xs-12\">\r\n                        <div class=\"text-center\"><button  type=\"submit\" class=\"theme-btn btn-style-two\">Guardar</button></div>\r\n                    </div>\r\n                </div>\r\n            </form>\r\n        </div>\r\n    </div>\r\n</section>\r\n0\r\n"
+module.exports = "<!--Contact Section-->\n<section class=\"contact-section\">\n  <div class=\"auto-container\">\n      <!--Section Title-->\n        <h1>Nueva Cooperativa</h1>\n        <div class=\"contact-form default-form\">\n\n           <form #form=\"ngForm\" (ngSubmit)=\"guardarCooperativa(form)\">\n                <div class=\"row clearfix\">\n\n                    <div class=\"form-group col-md-6 col-sm-6 col-xs-12\">\n                        <input type=\"text\" name=\"nombre\" value=\"\" placeholder=\"Nombre *\" ngModel required>\n                    </div>\n\n                    <div class=\"form-group col-md-6 col-sm-6 col-xs-12\">\n                        <input type=\"text\" name=\"nit\" value=\"\" placeholder=\"NIT *\" ngModel required>\n                    </div>\n\n                    <div class=\"form-group col-md-6 col-sm-6 col-xs-12\">\n                        <input type=\"email\" name=\"correo\" value=\"\" placeholder=\"Correo *\" ngModel required>\n                    </div>\n\n                    <div class=\"form-group col-md-6 col-sm-6 col-xs-12\">\n                        <input type=\"text\" name=\"responsable\" value=\"\" placeholder=\"Responsable *\" ngModel required>\n                    </div>\n\n                   <div class=\"form-group col-md-6 col-sm-6 col-xs-12\">\n                        <input type=\"text\" name=\"direccion\" value=\"\" placeholder=\"Dirección *\" ngModel required>\n                    </div>\n\n                    <div class=\"form-group col-md-6 col-sm-6 col-xs-12\">\n                          <input type=\"text\" name=\"telefono\" value=\"\" placeholder=\"Telefono *\" ngModel required>\n                    </div>\n\n                   <div class=\"form-group col-md-6 col-sm-6 col-xs-12\">\n                        <input type=\"text\" name=\"zona\" value=\"\" placeholder=\"Zona *\" ngModel required>\n                    </div>\n\n                    <div class=\"form-group col-md-12 col-sm-12 col-xs-12\">\n                        <textarea name=\"descripcion\" placeholder=\"Descripción\" ngModel></textarea>\n                    </div>\n                    <div class=\"left-align\"> * Campos Obligatorios </div>\n                    <div class=\"form-group col-md-12 col-sm-12 col-xs-12\">\n                        <div class=\"text-center\"><button  type=\"submit\" class=\"theme-btn btn-style-two\">Guardar</button></div>\n                    </div>\n                </div>\n            </form>\n        </div>\n    </div>\n</section>\n0\n"
 
 /***/ }),
 
@@ -256,7 +263,7 @@ var _a;
 /***/ "../../../../../src/app/cooperativa/listadoCooperativa.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<section class=\"contact-section\">\r\n  <div class=\"center centered center-block auto-container\">\r\n    <h1>Listado de Cooperativas</h1>\r\n\r\n    <table class=\"table-bordered cart-table table-responsive centered-column auto-container\">\r\n      <thead>\r\n          <tr>\r\n              <th>Nombre</th>\r\n              <th>NIT</th>\r\n              <th>Correo</th>\r\n              <th>Responsable</th>\r\n              <th>Dirección</th>\r\n              <th>Zona</th>\r\n              <th>Descripción</th>\r\n              <th>Acciones</th>\r\n          </tr>\r\n      </thead>\r\n      <tbody>\r\n        <tr *ngFor=\"let item of cooperativas\">\r\n            <td>{{ item.nombre }}</td>\r\n            <td>{{ item.nit }}</td>\r\n            <td>{{ item.correo }}</td>\r\n            <td>{{ item.responsable }}</td>\r\n            <td>{{ item.direccion }}</td>\r\n            <td>{{ item.zona }}</td>\r\n            <td>{{ item.descripcion }}</td>\r\n            <td>\r\n              <a routerLink=\"/cooperativa/editarCooperativa\">\r\n                <span class=\"fa fa-edit title-box title\" title=\"Editar Cooperativa\"></span>\r\n              </a>\r\n              <a routerLink=\"mapaCooperativa\">\r\n                <span class=\"fa fa-map-o title-box title\" title=\"Ubicar en el mapa\"></span>\r\n              </a>\r\n            </td>\r\n        </tr>\r\n      </tbody>\r\n      <tfoot>\r\n\r\n      </tfoot>\r\n    </table>\r\n  </div>\r\n</section>\r\n"
+module.exports = "<section class=\"contact-section\">\n  <div class=\"center centered center-block auto-container\">\n    <h1>Listado de Cooperativas</h1>\n\n    <table class=\"table-bordered cart-table table-responsive centered-column auto-container\">\n      <thead>\n          <tr>\n              <th>Nombre</th>\n              <th>NIT</th>\n              <th>Correo</th>\n              <th>Responsable</th>\n              <th>Dirección</th>\n              <th>Zona</th>\n              <th>Descripción</th>\n              <th>Acciones</th>\n          </tr>\n      </thead>\n      <tbody>\n        <tr *ngFor=\"let item of cooperativas\">\n            <td>{{ item.nombre }}</td>\n            <td>{{ item.nit }}</td>\n            <td>{{ item.correo }}</td>\n            <td>{{ item.responsable }}</td>\n            <td>{{ item.direccion }}</td>\n            <td>{{ item.zona }}</td>\n            <td>{{ item.descripcion }}</td>\n            <td>\n              <a routerLink=\"/cooperativa/editarCooperativa\">\n                <span class=\"fa fa-edit title-box title\" title=\"Editar Cooperativa\"></span>\n              </a>\n              <a routerLink=\"mapaCooperativa\">\n                <span class=\"fa fa-map-o title-box title\" title=\"Ubicar en el mapa\"></span>\n              </a>\n            </td>\n        </tr>\n      </tbody>\n      <tfoot>\n\n      </tfoot>\n    </table>\n  </div>\n</section>\n"
 
 /***/ }),
 
@@ -347,6 +354,75 @@ var _a;
 
 /***/ }),
 
+/***/ "../../../../../src/app/productor/productor-detalle/productor-detalle.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/productor/productor-detalle/productor-detalle.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  productor-detalle works!\n</p>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/productor/productor-detalle/productor-detalle.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProductorDetalleComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__productor_service__ = __webpack_require__("../../../../../src/app/productor/productor.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var ProductorDetalleComponent = (function () {
+    function ProductorDetalleComponent(productorServices) {
+        this.productorServices = productorServices;
+        alert("Dentro de productor services");
+    }
+    ProductorDetalleComponent.prototype.ngOnInit = function () {
+    };
+    return ProductorDetalleComponent;
+}());
+ProductorDetalleComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
+        selector: 'app-productor-detalle',
+        template: __webpack_require__("../../../../../src/app/productor/productor-detalle/productor-detalle.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/productor/productor-detalle/productor-detalle.component.css")],
+        providers: [
+            __WEBPACK_IMPORTED_MODULE_1__productor_service__["a" /* ProductorService */]
+        ]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__productor_service__["a" /* ProductorService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__productor_service__["a" /* ProductorService */]) === "function" && _a || Object])
+], ProductorDetalleComponent);
+
+var _a;
+//# sourceMappingURL=productor-detalle.component.js.map
+
+/***/ }),
+
 /***/ "../../../../../src/app/productor/productor.service.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -400,7 +476,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "input[type=\"file\"]{\r\n  margin: 0 auto;\r\n  border: none;\r\n}\r\n\r\ninput, select{\r\n  border: solid 1px #DDD;\r\n  border-radius: 5px;\r\n}\r\n\r\n.productor-form .form-item{\r\n  text-align: left;\r\n  width: 630px;\r\n  margin: 5px auto 0;\r\n  display: block;\r\n\r\n}\r\n\r\n.productor-form .form-item > label{\r\n  width: 300px;\r\n  text-align: right;\r\n}\r\n\r\n.productor-form .form-item > input, .productor-form .form-item > select{\r\n  width: 300px;\r\n  padding: 5px;\r\n  box-sizing: border-box;\r\n}\r\n", ""]);
+exports.push([module.i, "input[type=\"file\"]{\n  margin: 0 auto;\n  border: none;\n}\n\ninput, select{\n  border: solid 1px #DDD;\n  border-radius: 5px;\n}\n\n.productor-form .form-item{\n  text-align: left;\n  width: 630px;\n  margin: 5px auto 0;\n  display: block;\n\n}\n\n.productor-form .form-item > label{\n  width: 300px;\n  text-align: right;\n}\n\n.productor-form .form-item > input, .productor-form .form-item > select{\n  width: 300px;\n  padding: 5px;\n  box-sizing: border-box;\n}\n", ""]);
 
 // exports
 

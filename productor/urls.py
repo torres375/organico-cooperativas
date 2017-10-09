@@ -21,5 +21,6 @@ from . import views
 urlpatterns = [
     url(r'^$', views.productorAdmin, name="home_productor"),
     url(r'^registro/$', views.productorAdmin, name="registrar_productor"),
-    url(r'^service$', views.productoresList, name="servicios_productor")
+    url(r'^service$', views.productoresList, name="servicios_productor"),
+    url(r'^detalle/(?P<id>.+)$', views.productorDetail, name='detalle_productor'),
 ]
