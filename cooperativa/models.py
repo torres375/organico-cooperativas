@@ -12,7 +12,7 @@ class Cooperativa(models.Model):
     nit = models.CharField(max_length=70)
     correo = models.CharField(max_length=70)
     telefono = models.CharField(max_length=70)
-    direccion = models.CharField(max_length=100)
+    direccion = models.CharField(max_length=255)
 
     class Meta:
         verbose_name = 'Cooperativa'

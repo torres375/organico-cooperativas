@@ -50,3 +50,4 @@ import { ProductorDetalleComponent } from './productor/productor-detalle/product
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
