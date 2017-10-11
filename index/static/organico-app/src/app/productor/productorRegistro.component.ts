@@ -26,7 +26,6 @@ export class ProductorRegistroComponent implements OnInit {
     this.cooperativaService.getCooperativas()
           .subscribe(response => {
             this.cooperativas = response;
-            alert("Su informaci?n fue agregada con ?xito.");
           });
   }
 
@@ -35,9 +34,8 @@ export class ProductorRegistroComponent implements OnInit {
         && this.productor.documento && this.productor.direccion && this.productor.cooperativa
         && this.productor.foto){
       this.productorService.setProductor(this.productor).subscribe(response => {
-        console.log(response);
+        alert("Su informaci?n fue agregada con ?xito.");
         this.productor = {};
-
       });
     }
   }
