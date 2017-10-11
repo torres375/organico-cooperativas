@@ -44,3 +44,4 @@ import { ProductorRegistroComponent } from './productor/productorRegistro.compon
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+

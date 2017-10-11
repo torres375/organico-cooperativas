@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http , Response, Headers, RequestOptions} from '@angular/http';
 import 'rxjs/add/operator/map';
-import {Observable} from "rxjs/Observable";
 
 @Injectable()
 export class CrearCooperativaService {
@@ -12,7 +11,6 @@ export class CrearCooperativaService {
       let headers = new Headers({ 'Content-Type': 'application/json','X-CSRFToken': this.getCookie('csrftoken') });
       let options = new RequestOptions({ headers: headers });
       let body = JSON.stringify( cooperativa );
-
 
       return this.http.post('guardarCooperativa/', body, options).map(response => response.json());
     }
