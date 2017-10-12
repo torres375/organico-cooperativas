@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render, get_list_or_404
 from django.views.decorators.csrf import csrf_exempt
 import json
 from django.http import HttpResponse, JsonResponse
@@ -22,6 +22,14 @@ class modeloJSON(HttpResponse):
 def cooperativasList(request):
     if (request.method == 'GET'):
         cooperativas = Cooperativa.objects.all()
+        serializer = CooperativaSerializer(cooperativas, many=True)
+        return modeloJSON(serializer.data)
+
+@csrf_exempt
+def cooperativasGet(request, id_cooperativa):
+    if (request.method == 'GET'):
+        cooperativa = get_object_or_404(Cooperativa, id=id_cooperativa)
+        cooperativas = Cooperativa.objects.all().filter(id=id_cooperativa)
         serializer = CooperativaSerializer(cooperativas, many=True)
         return modeloJSON(serializer.data)
 

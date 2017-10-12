@@ -271,7 +271,7 @@ var _a;
 /***/ "../../../../../src/app/cooperativa/listadoCooperativa.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<section class=\"contact-section\">\r\n  <div class=\"center centered center-block auto-container\">\r\n    <h1>Listado de Cooperativas</h1>\r\n\r\n    <table class=\"table-bordered cart-table table-responsive centered-column auto-container\">\r\n      <thead>\r\n          <tr>\r\n              <th>Nombre</th>\r\n              <th>NIT</th>\r\n              <th>Correo</th>\r\n              <th>Responsable</th>\r\n              <th>Dirección</th>\r\n              <th>Zona</th>\r\n              <th>Descripción</th>\r\n              <th>Acciones</th>\r\n          </tr>\r\n      </thead>\r\n      <tbody>\r\n        <tr *ngFor=\"let item of cooperativas\">\r\n            <td>{{ item.nombre }}</td>\r\n            <td>{{ item.nit }}</td>\r\n            <td>{{ item.correo }}</td>\r\n            <td>{{ item.responsable }}</td>\r\n            <td>{{ item.direccion }}</td>\r\n            <td>{{ item.zona }}</td>\r\n            <td>{{ item.descripcion }}</td>\r\n            <td>\r\n              <a routerLink=\"/cooperativa/editarCooperativa\">\r\n                <span class=\"fa fa-edit title-box title\" title=\"Editar Cooperativa\"></span>\r\n              </a>\r\n              <a routerLink=\"mapaCooperativa\">\r\n                <span class=\"fa fa-map-o title-box title\" title=\"Ubicar en el mapa\"></span>\r\n              </a>\r\n            </td>\r\n        </tr>\r\n      </tbody>\r\n      <tfoot>\r\n\r\n      </tfoot>\r\n    </table>\r\n  </div>\r\n</section>\r\n"
+module.exports = "<section class=\"contact-section\">\r\n  <div class=\"center centered center-block auto-container\">\r\n    <h1>Listado de Cooperativas</h1>\r\n\r\n    <table class=\"table-bordered cart-table table-responsive centered-column auto-container\">\r\n      <thead>\r\n          <tr>\r\n              <th>Nombre</th>\r\n              <th>NIT</th>\r\n              <th>Correo</th>\r\n              <th>Responsable</th>\r\n              <th>Dirección</th>\r\n              <th>Zona</th>\r\n              <th>Descripción</th>\r\n              <th>Acciones</th>\r\n          </tr>\r\n      </thead>\r\n      <tbody>\r\n        <tr *ngFor=\"let item of cooperativas\">\r\n            <td><a routerLink=\"/cooperativa/verCooperativa/{{ item.id }}\">\r\n                {{ item.nombre }}</a></td>\r\n            <td>{{ item.nit }}</td>\r\n            <td>{{ item.correo }}</td>\r\n            <td>{{ item.responsable }}</td>\r\n            <td>{{ item.direccion }}</td>\r\n            <td>{{ item.zona }}</td>\r\n            <td>{{ item.descripcion }}</td>\r\n            <td>\r\n              <a routerLink=\"/cooperativa/editarCooperativa\">\r\n                <span class=\"fa fa-edit title-box title\" title=\"Editar Cooperativa\"></span>\r\n              </a>\r\n              <a routerLink=\"mapaCooperativa\">\r\n                <span class=\"fa fa-map-o title-box title\" title=\"Ubicar en el mapa\"></span>\r\n              </a>\r\n            </td>\r\n        </tr>\r\n      </tbody>\r\n      <tfoot>\r\n\r\n      </tfoot>\r\n    </table>\r\n  </div>\r\n</section>\r\n"
 
 /***/ }),
 
@@ -464,7 +464,6 @@ var ProductorRegistroComponent = (function () {
         this.cooperativaService.getCooperativas()
             .subscribe(function (response) {
             _this.cooperativas = response;
-            alert("Su informaci?n fue agregada con ?xito.");
         });
     };
     ProductorRegistroComponent.prototype.saveProductor = function () {
@@ -473,7 +472,7 @@ var ProductorRegistroComponent = (function () {
             && this.productor.documento && this.productor.direccion && this.productor.cooperativa
             && this.productor.foto) {
             this.productorService.setProductor(this.productor).subscribe(function (response) {
-                console.log(response);
+                alert("Su informaci?n fue agregada con ?xito.");
                 _this.productor = {};
             });
         }

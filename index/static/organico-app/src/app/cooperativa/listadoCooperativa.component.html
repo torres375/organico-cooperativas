@@ -17,7 +17,8 @@
       </thead>
       <tbody>
         <tr *ngFor="let item of cooperativas">
-            <td>{{ item.nombre }}</td>
+            <td><a routerLink="/cooperativa/verCooperativa/{{ item.id }}">
+                {{ item.nombre }}</a></td>
             <td>{{ item.nit }}</td>
             <td>{{ item.correo }}</td>
             <td>{{ item.responsable }}</td>
