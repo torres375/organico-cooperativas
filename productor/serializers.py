@@ -6,3 +6,4 @@ class ProductorSerializer(serializers.ModelSerializer):
     class Meta:
         model = Productor
         fields = '__all__'
+        depth = 1

@@ -1,3 +1,81 @@
-<p>
-  productor-detalle works!
-</p>
+<div class="shop-single">
+    <!--Page Title-->
+    <section class="page-title" style="background-image:url(/static/images/background/bg-page-title-1a.jpg);">
+        <div class="auto-container">
+            <h1>Productor</h1>
+        </div>
+    </section>
+
+    <div *ngIf="productor != null">
+        <!--Product Details Section-->
+        <section class="product-details">
+            <div class="auto-container">
+                <!--Basic Details-->
+                <div class="basic-details">
+                    <div class="row clearfix">
+                        <div class="image-column col-md-4 col-sm-5 col-xs-12">
+                            <figure class="image-box"><a href="{{ productor.foto }}"
+                                                         class="lightbox-image"
+                                                         title="{{ productor.nombre }}"><img
+                                    src="{{ productor.foto }}" alt=""></a></figure>
+                            <div *ngIf="!!productor.latitud && !!productor.longitud">
+                                <h2 style="text-align: left">Ubicacion</h2>
+                                <agm-map [latitude]="productor.latitud"
+                                         [longitude]="productor.longitud"
+                                         [zoom]="12">
+                                    <agm-marker [latitude]="productor.latitud"
+                                                [longitude]="productor.longitud"></agm-marker>
+                                </agm-map>
+                            </div>
+                        </div>
+                        <div class="info-column col-md-8 col-sm-7 col-xs-12" style="text-align: left">
+                            <div class="details-header">
+                                <h4>{{ productor.nombre }}</h4>
+                            </div>
+
+                            <div class="text">
+                                {{ productor.descripcion }}
+                            </div>
+                            <div>
+                                <div class="form-horizontal">
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label" for="cvv">Cooperativa</label>
+                                        <div class="col-sm-9">
+                                            {{ productor.cooperativa.nombre }}
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label" for="cvv">Tipo Doc.</label>
+                                        <div class="col-sm-9">
+                                            {{ productor.tipo_documento.nombre }}
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label" for="cvv">Documento</label>
+                                        <div class="col-sm-9">
+                                            {{ productor.documento }}
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label" for="cvv">Direcci&oacute;n</label>
+                                        <div class="col-sm-9">
+                                            {{ productor.direccion }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--Basic Details-->
+                <!--Fluid Section Two-->
+                <section class="fluid-section-two">
+                    <div class="outer-box clearfix">
+
+
+                    </div>
+                </section>
+
+            </div>
+        </section>
+    </div>
+</div>

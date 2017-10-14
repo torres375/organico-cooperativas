@@ -28,7 +28,6 @@ class modeloJSON(HttpResponse):
         kwargs['content_type'] = 'application/json'
         super(modeloJSON, self).__init__(content, **kwargs)
 
-
 @csrf_exempt
 @api_view(['GET', 'POST', ])
 def productoresList(request):
@@ -43,3 +42,10 @@ def productoresList(request):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.data, status=status.HTTP_400_BAD_REQUEST)
+
+@csrf_exempt
+@api_view(['GET'])
+def productorGet(request, id):
+    productor = Productor.objects.get(pk=id)
+    serializer = ProductorSerializer(productor)
+    return modeloJSON(serializer.data)

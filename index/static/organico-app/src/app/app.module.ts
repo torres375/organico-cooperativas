@@ -4,6 +4,7 @@ import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { APP_BASE_HREF } from '@angular/common';
+import { AgmCoreModule } from '@agm/core';
 
 import { AppComponent } from './app.component';
 import { ListadoCooperativaComponent } from './cooperativa/listadoCooperativa.component';
@@ -17,12 +18,15 @@ import { ProductorDetalleComponent } from './productor/productor-detalle/product
     ListadoCooperativaComponent,
     CrearCooperativaComponent,
     ProductorRegistroComponent,
-    ProductorDetalleComponent
+    ProductorDetalleComponent,
   ],
   imports: [
     BrowserModule,
     HttpModule,
     FormsModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyArw7TOl_K1zuxYi_8nR6niG5kBTyegHfU'
+    }),
     RouterModule.forRoot([
       {
         path: 'cooperativa/crearCooperativa',
