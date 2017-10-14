@@ -9,6 +9,7 @@ import { AgmCoreModule } from '@agm/core';
 import { AppComponent } from './app.component';
 import { ListadoCooperativaComponent } from './cooperativa/listadoCooperativa.component';
 import { CrearCooperativaComponent } from './cooperativa/crearCooperativa.component';
+import { CooperativaDetalleComponent } from './cooperativa/cooperativa-detalle/cooperativa-detalle.component';
 import { ProductorRegistroComponent } from './productor/productorRegistro.component';
 import { ProductorDetalleComponent } from './productor/productor-detalle/productor-detalle.component';
 
@@ -17,6 +18,7 @@ import { ProductorDetalleComponent } from './productor/productor-detalle/product
     AppComponent,
     ListadoCooperativaComponent,
     CrearCooperativaComponent,
+    CooperativaDetalleComponent,
     ProductorRegistroComponent,
     ProductorDetalleComponent,
   ],
@@ -39,6 +41,10 @@ import { ProductorDetalleComponent } from './productor/productor-detalle/product
       {
         path: 'cooperativa/editarCooperativa',
         component: CrearCooperativaComponent
+      },
+      {
+        path: 'cooperativa/detalle/:id',
+        component: CooperativaDetalleComponent
       },
       {
         path: 'productor/registro',
