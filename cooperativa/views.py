@@ -51,3 +51,8 @@ def guardarCooperativa(request):
         cooperativa.save()
         respuesta = True
     return modeloJSON(respuesta)
+
+def cooperativasDetail(request, id):
+    cooperativa = get_object_or_404(Cooperativa, id=id)
+    context = {'cooperativa': cooperativa}
+    return render(request, 'cooperativas.html', context)
