@@ -19,4 +19,10 @@ export class ProductorService {
             .map(response => <string[]>response.json());
 
     }
+
+    getProd(id: number): Observable<string> {
+        return this.http.get('/productor/get/' + id)
+            .map(response => <string>response.json());
+
+    }
 }

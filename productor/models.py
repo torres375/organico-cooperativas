@@ -25,7 +25,9 @@ class Productor(models.Model):
     documento = models.CharField(max_length=50)
     direccion = models.TextField()
     cooperativa = models.ForeignKey(Cooperativa)
-    foto= models.TextField()
+    latitud = models.FloatField(blank=True, null=True)
+    longitud = models.FloatField(blank=True, null=True)
+    foto = models.TextField()
 
     class Meta:
         verbose_name = 'Productor'

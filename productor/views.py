@@ -9,6 +9,7 @@ from rest_framework.decorators import api_view
 from productor.models import Productor
 from productor.serializers import ProductorSerializer
 
+
 # Create your views here.
 
 def productorAdmin(request):
@@ -16,12 +17,16 @@ def productorAdmin(request):
     return render(request, 'productor.html', context)
 
 
+def productorDetail(request, id):
+    productor = get_object_or_404(Productor, id=id)
+    context = {'productor': productor}
+    return render(request, 'productor-detalle.html', context)
+
 class modeloJSON(HttpResponse):
     def __init__(self, data, **kwargs):
         content = JSONRenderer().render(data)
         kwargs['content_type'] = 'application/json'
         super(modeloJSON, self).__init__(content, **kwargs)
-
 
 @csrf_exempt
 @api_view(['GET', 'POST', ])
@@ -38,3 +43,9 @@ def productoresList(request):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.data, status=status.HTTP_400_BAD_REQUEST)
 
+@csrf_exempt
+@api_view(['GET'])
+def productorGet(request, id):
+    productor = Productor.objects.get(pk=id)
+    serializer = ProductorSerializer(productor)
+    return modeloJSON(serializer.data)
