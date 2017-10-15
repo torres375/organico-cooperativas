@@ -90,15 +90,17 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__cooperativa_listadoCooperativa_component__ = __webpack_require__("../../../../../src/app/cooperativa/listadoCooperativa.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__cooperativa_crearCooperativa_component__ = __webpack_require__("../../../../../src/app/cooperativa/crearCooperativa.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__productor_productorRegistro_component__ = __webpack_require__("../../../../../src/app/productor/productorRegistro.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__productor_productor_detalle_productor_detalle_component__ = __webpack_require__("../../../../../src/app/productor/productor-detalle/productor-detalle.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__productor_productor_lista_productor_lista_component__ = __webpack_require__("../../../../../src/app/productor/productor-lista/productor-lista.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__cooperativa_cooperativa_detalle_cooperativa_detalle_component__ = __webpack_require__("../../../../../src/app/cooperativa/cooperativa-detalle/cooperativa-detalle.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__productor_productorRegistro_component__ = __webpack_require__("../../../../../src/app/productor/productorRegistro.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__productor_productor_detalle_productor_detalle_component__ = __webpack_require__("../../../../../src/app/productor/productor-detalle/productor-detalle.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__productor_productor_lista_productor_lista_component__ = __webpack_require__("../../../../../src/app/productor/productor-lista/productor-lista.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -125,9 +127,10 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_9__app_component__["a" /* AppComponent */],
             __WEBPACK_IMPORTED_MODULE_10__cooperativa_listadoCooperativa_component__["a" /* ListadoCooperativaComponent */],
             __WEBPACK_IMPORTED_MODULE_11__cooperativa_crearCooperativa_component__["a" /* CrearCooperativaComponent */],
-            __WEBPACK_IMPORTED_MODULE_12__productor_productorRegistro_component__["a" /* ProductorRegistroComponent */],
-            __WEBPACK_IMPORTED_MODULE_13__productor_productor_detalle_productor_detalle_component__["a" /* ProductorDetalleComponent */],
-            __WEBPACK_IMPORTED_MODULE_14__productor_productor_lista_productor_lista_component__["a" /* ProductorListaComponent */],
+            __WEBPACK_IMPORTED_MODULE_12__cooperativa_cooperativa_detalle_cooperativa_detalle_component__["a" /* CooperativaDetalleComponent */],
+            __WEBPACK_IMPORTED_MODULE_13__productor_productorRegistro_component__["a" /* ProductorRegistroComponent */],
+            __WEBPACK_IMPORTED_MODULE_14__productor_productor_detalle_productor_detalle_component__["a" /* ProductorDetalleComponent */],
+            __WEBPACK_IMPORTED_MODULE_15__productor_productor_lista_productor_lista_component__["a" /* ProductorListaComponent */],
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -152,16 +155,20 @@ AppModule = __decorate([
                     component: __WEBPACK_IMPORTED_MODULE_11__cooperativa_crearCooperativa_component__["a" /* CrearCooperativaComponent */]
                 },
                 {
+                    path: 'cooperativa/detalle/:id',
+                    component: __WEBPACK_IMPORTED_MODULE_12__cooperativa_cooperativa_detalle_cooperativa_detalle_component__["a" /* CooperativaDetalleComponent */]
+                },
+                {
                     path: 'productor/registro',
-                    component: __WEBPACK_IMPORTED_MODULE_12__productor_productorRegistro_component__["a" /* ProductorRegistroComponent */]
+                    component: __WEBPACK_IMPORTED_MODULE_13__productor_productorRegistro_component__["a" /* ProductorRegistroComponent */]
                 },
                 {
                     path: 'productor/detalle/:id',
-                    component: __WEBPACK_IMPORTED_MODULE_13__productor_productor_detalle_productor_detalle_component__["a" /* ProductorDetalleComponent */]
+                    component: __WEBPACK_IMPORTED_MODULE_14__productor_productor_detalle_productor_detalle_component__["a" /* ProductorDetalleComponent */]
                 },
                 {
                     path: 'productor/lista',
-                    component: __WEBPACK_IMPORTED_MODULE_14__productor_productor_lista_productor_lista_component__["a" /* ProductorListaComponent */]
+                    component: __WEBPACK_IMPORTED_MODULE_15__productor_productor_lista_productor_lista_component__["a" /* ProductorListaComponent */]
                 }
             ])
         ],
@@ -171,6 +178,233 @@ AppModule = __decorate([
 ], AppModule);
 
 //# sourceMappingURL=app.module.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/cooperativa/cooperativa-detalle/cooperativa-detalle.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "agm-map {\n  height: 300px;\n}\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/cooperativa/cooperativa-detalle/cooperativa-detalle.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"shop-single\">\n    <!--Page Title-->\n    <section class=\"page-title\" style=\"background-image:url(/static/images/background/bg-page-title-1a.jpg);\">\n        <div class=\"auto-container\">\n            <h1>Información de la Cooperativa</h1>\n        </div>\n    </section>\n\n    <div *ngIf=\"cooperativa != null\">\n        <!--Product Details Section-->\n        <section class=\"product-details\">\n            <div class=\"auto-container\">\n                <!--Basic Details-->\n                <div class=\"basic-details\">\n                    <div class=\"row clearfix\">\n                        <div class=\"info-column col-md-8 col-sm-7 col-xs-12\" style=\"text-align: left\">\n                            <div class=\"details-header\">\n                                <h4>{{ cooperativa.nombre }}</h4>\n                            </div>\n\n                            <div class=\"details-header\">\n                                <h4>{{ cooperativa.nit }}</h4>\n                            </div>\n\n                            <div class=\"text\">\n                                {{ cooperativa.descripcion }}\n                            </div>\n                            <div>\n                                <div class=\"form-horizontal\">\n                                    <div class=\"form-group\">\n                                        <label class=\"col-sm-3 control-label\" for=\"cvv\">Responsable:</label>\n                                        <div class=\"col-sm-9\">\n                                            {{ cooperativa.responsable }}\n                                        </div>\n                                    </div>\n                                    <div class=\"form-group\">\n                                        <label class=\"col-sm-3 control-label\" for=\"cvv\">Dirección:</label>\n                                        <div class=\"col-sm-9\">\n                                            {{ cooperativa.direccion }}\n                                        </div>\n                                    </div>\n                                    <div class=\"form-group\">\n                                        <label class=\"col-sm-3 control-label\" for=\"cvv\">Zona:</label>\n                                        <div class=\"col-sm-9\">\n                                            {{ cooperativa.zona }}\n                                        </div>\n                                    </div>\n                                    <div class=\"form-group\">\n                                        <label class=\"col-sm-3 control-label\" for=\"cvv\">Teléfono:</label>\n                                        <div class=\"col-sm-9\">\n                                            {{ cooperativa.telefono }}\n                                        </div>\n                                    </div>\n                                    <div class=\"form-group\">\n                                        <label class=\"col-sm-3 control-label\" for=\"cvv\">Correo:</label>\n                                        <div class=\"col-sm-9\">\n                                            {{ cooperativa.correo }}\n                                        </div>\n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                </div><!--Basic Details-->\n                <!--Fluid Section Two-->\n                <section class=\"fluid-section-two\">\n                    <div class=\"outer-box clearfix\">\n\n\n                    </div>\n                </section>\n\n            </div>\n        </section>\n    </div>\n</div>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/cooperativa/cooperativa-detalle/cooperativa-detalle.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CooperativaDetalleComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cooperativa_service__ = __webpack_require__("../../../../../src/app/cooperativa/cooperativa-detalle/cooperativa.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_switchMap__ = __webpack_require__("../../../../rxjs/add/operator/switchMap.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_switchMap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_switchMap__);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var CooperativaDetalleComponent = (function () {
+    function CooperativaDetalleComponent(element, route, router, cd, cooperativaServices) {
+        this.element = element;
+        this.route = route;
+        this.router = router;
+        this.cd = cd;
+        this.cooperativaServices = cooperativaServices;
+        this.cooperativa = null;
+        this.styles = [
+            {
+                "featureType": "administrative",
+                "elementType": "labels.text.fill",
+                "stylers": [
+                    {
+                        "color": "#272727"
+                    }
+                ]
+            },
+            {
+                "featureType": "landscape",
+                "elementType": "all",
+                "stylers": [
+                    {
+                        "color": "#f7f7f7"
+                    }
+                ]
+            },
+            {
+                "featureType": "poi",
+                "elementType": "all",
+                "stylers": [
+                    {
+                        "visibility": "on"
+                    }
+                ]
+            },
+            {
+                "featureType": "road",
+                "elementType": "all",
+                "stylers": [
+                    {
+                        "saturation": -20
+                    },
+                    {
+                        "lightness": 20
+                    }
+                ]
+            },
+            {
+                "featureType": "road.highway",
+                "elementType": "all",
+                "stylers": [
+                    {
+                        "visibility": "off"
+                    },
+                    {
+                        "color": "#f5b062"
+                    }
+                ]
+            },
+            {
+                "featureType": "road.arterial",
+                "elementType": "labels.icon",
+                "stylers": [
+                    {
+                        "visibility": "off"
+                    }
+                ]
+            },
+            {
+                "featureType": "transit",
+                "elementType": "all",
+                "stylers": [
+                    {
+                        "visibility": "off"
+                    }
+                ]
+            },
+            {
+                "featureType": "water",
+                "elementType": "all",
+                "stylers": [
+                    {
+                        "color": "#5ec79c"
+                    },
+                    {
+                        "visibility": "on"
+                    }
+                ]
+            }
+        ];
+    }
+    CooperativaDetalleComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.route.params
+            .switchMap(function (params) {
+            return _this.cooperativaServices.getCoop(+params["id"]);
+        })
+            .subscribe(function (response) {
+            _this.cooperativa = response;
+            _this.cd.detectChanges();
+        }, function (reason) {
+            _this.cooperativa = null;
+            alert("error al cargar datos");
+        });
+    };
+    return CooperativaDetalleComponent;
+}());
+CooperativaDetalleComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
+        selector: 'app-cooperativa-detalle',
+        template: __webpack_require__("../../../../../src/app/cooperativa/cooperativa-detalle/cooperativa-detalle.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/cooperativa/cooperativa-detalle/cooperativa-detalle.component.css")],
+        providers: [
+            __WEBPACK_IMPORTED_MODULE_2__cooperativa_service__["a" /* CooperativaService */]
+        ]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* ElementRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* ElementRef */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["l" /* ChangeDetectorRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["l" /* ChangeDetectorRef */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_2__cooperativa_service__["a" /* CooperativaService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__cooperativa_service__["a" /* CooperativaService */]) === "function" && _e || Object])
+], CooperativaDetalleComponent);
+
+var _a, _b, _c, _d, _e;
+//# sourceMappingURL=cooperativa-detalle.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/cooperativa/cooperativa-detalle/cooperativa.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CooperativaService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/add/operator/map.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var CooperativaService = (function () {
+    function CooperativaService(http) {
+        this.http = http;
+    }
+    /*
+    setCooperativa(cooperativa: any): Observable<string[]> {
+        return this.http.post('/cooperativa/consultarCooperativa', cooperativa)
+            .map(response => <string[]>response.json());
+
+    }
+
+    getCooperativa(): Observable<string[]> {
+        return this.http.get('/cooperativa/consultarCooperativa')
+            .map(response => <string[]>response.json());
+
+    }
+    */
+    CooperativaService.prototype.getCoop = function (id) {
+        return this.http.get('/cooperativa/consultarCooperativa/' + id)
+            .map(function (response) { return response.json(); });
+    };
+    return CooperativaService;
+}());
+CooperativaService = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object])
+], CooperativaService);
+
+var _a;
+//# sourceMappingURL=cooperativa.service.js.map
 
 /***/ }),
 
@@ -296,7 +530,7 @@ var _a;
 /***/ "../../../../../src/app/cooperativa/listadoCooperativa.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<section class=\"contact-section\">\n  <div class=\"center centered center-block auto-container\">\n    <h1>Listado de Cooperativas</h1>\n\n    <table class=\"table-bordered cart-table table-responsive centered-column auto-container\">\n      <thead>\n          <tr>\n              <th>Nombre</th>\n              <th>NIT</th>\n              <th>Correo</th>\n              <th>Responsable</th>\n              <th>Dirección</th>\n              <th>Zona</th>\n              <th>Descripción</th>\n              <th>Acciones</th>\n          </tr>\n      </thead>\n      <tbody>\n        <tr *ngFor=\"let item of cooperativas\">\n            <td><a routerLink=\"/cooperativa/verCooperativa/{{ item.id }}\">\n                {{ item.nombre }}</a></td>\n            <td>{{ item.nit }}</td>\n            <td>{{ item.correo }}</td>\n            <td>{{ item.responsable }}</td>\n            <td>{{ item.direccion }}</td>\n            <td>{{ item.zona }}</td>\n            <td>{{ item.descripcion }}</td>\n            <td>\n              <a routerLink=\"/cooperativa/editarCooperativa\">\n                <span class=\"fa fa-edit title-box title\" title=\"Editar Cooperativa\"></span>\n              </a>\n              <a routerLink=\"mapaCooperativa\">\n                <span class=\"fa fa-map-o title-box title\" title=\"Ubicar en el mapa\"></span>\n              </a>\n            </td>\n        </tr>\n      </tbody>\n      <tfoot>\n\n      </tfoot>\n    </table>\n  </div>\n</section>\n"
+module.exports = "<section class=\"contact-section\">\n  <div class=\"center centered center-block auto-container\">\n    <h1>Listado de Cooperativas</h1>\n\n    <table class=\"table-bordered cart-table table-responsive centered-column auto-container\">\n      <thead>\n          <tr>\n              <th>Nombre</th>\n              <th>NIT</th>\n              <th>Correo</th>\n              <th>Responsable</th>\n              <th>Dirección</th>\n              <th>Zona</th>\n              <th>Descripción</th>\n              <th>Acciones</th>\n          </tr>\n      </thead>\n      <tbody>\n        <tr *ngFor=\"let item of cooperativas\">\n            <td><a routerLink=\"/cooperativa/detalle/{{ item.id }}\">\n                {{ item.nombre }}</a></td>\n            <td>{{ item.nit }}</td>\n            <td>{{ item.correo }}</td>\n            <td>{{ item.responsable }}</td>\n            <td>{{ item.direccion }}</td>\n            <td>{{ item.zona }}</td>\n            <td>{{ item.descripcion }}</td>\n            <td>\n              <a routerLink=\"/cooperativa/editarCooperativa\">\n                <span class=\"fa fa-edit title-box title\" title=\"Editar Cooperativa\"></span>\n              </a>\n              <a routerLink=\"mapaCooperativa\">\n                <span class=\"fa fa-map-o title-box title\" title=\"Ubicar en el mapa\"></span>\n              </a>\n            </td>\n        </tr>\n      </tbody>\n      <tfoot>\n\n      </tfoot>\n    </table>\n  </div>\n</section>\n"
 
 /***/ }),
 
@@ -726,7 +960,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "input[type=\"file\"]{\n  margin: 0 auto;\n  border: none;\n}\n\ninput, select{\n  border: solid 1px #DDD;\n  border-radius: 5px;\n}\n\n.productor-form .form-item{\n  text-align: left;\n  width: 630px;\n  margin: 5px auto 0;\n  display: block;\n\n}\n\n.productor-form .form-item > label{\n  width: 300px;\n  text-align: right;\n}\n\n.productor-form .form-item > input, .productor-form .form-item > select{\n  width: 300px;\n  padding: 5px;\n  box-sizing: border-box;\n}\n", ""]);
+exports.push([module.i, "input[type=\"file\"]{\n  margin: 0 auto;\n  border: none;\n}\n\n.productor-registro-section{\n  overflow: hidden;\n  padding-bottom: 20px;\n}\n\nagm-map {\n  height: 300px;\n}\n", ""]);
 
 // exports
 
@@ -739,7 +973,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/productor/productorRegistro.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"productor-form\">\n  <div class=\"form-item\">\n    <label for=\"nombreProductor\">Nombre*: </label>\n    <input type=\"text\" id=\"nombreProductor\" placeholder=\"Nombre\" />\n  </div>\n  <div class=\"form-item\">\n    <label for=\"descripcionProductor\">Acerca de m&iacute;*: </label>\n    <input type=\"text\" id=\"descripcionProductor\" placeholder=\"Acerca de m&iacute;\" [(ngModel)]=\"productor.descripcion\"/>\n  </div>\n  <div class=\"form-item\">\n    <label for=\"tipoDocumento\">Tipo de documento*: </label>\n    <select id=\"tipoDocumento\" [(ngModel)]=\"productor.tipo_documento\">\n      <option value=\"-1\">-- Tipo de Documento --</option>\n      <option value=\"1\">C&eacute;dula de ciudadan&iacute;a</option>\n    </select>\n  </div>\n  <div class=\"form-item\">\n    <label for=\"numeroDocumentoProductor\">N&uacute;mero de documento*: </label>\n    <input type=\"text\" id=\"numeroDocumentoProductor\" placeholder=\"N&uacute;mero de documento\" [(ngModel)]=\"productor.documento\"/>\n  </div>\n  <div class=\"form-item\">\n    <label for=\"direccionProductor\">Direcci&oacute;n*: </label>\n    <input type=\"text\" id=\"direccionProductor\" placeholder=\"Direcci&oacute;n\" [(ngModel)]=\"productor.direccion\"/>\n  </div>\n  <div class=\"form-item\">\n    <label for=\"cooperativa\">Cooperativa*: </label>\n    <select id=\"cooperativa\" [(ngModel)]=\"productor.cooperativa\">\n      <option value=\"-1\">-- Cooperativa --</option>\n      <option *ngFor=\"let cooperativa of cooperativas\" value=\"{{cooperativa.id}}\">{{cooperativa.nombre}}</option>\n    </select>\n  </div>\n  <div>\n    <label for=\"foto\">Foto*:</label>\n    <input type=\"file\" #entradaFoto (change)=\"loadFoto(entradaFoto)\">\n    <img src=\"{{productor.foto}}\" width=\"200\" >\n  </div>\n  <div>\n    <button (click)=\"saveProductor()\">Env&iacute;ar datos</button>\n  </div>\n</div>\n"
+module.exports = "<section class=\"productor-registro-section\">\n  <div class=\"auto-container\">\n      <!--Section Title-->\n        <h1>Nuevo Productor</h1>\n\n      <div class=\"productor-form default-form row col-md-8 col-md-offset-2\">\n        <div class=\"form-group col-md-6 col-sm-6 col-xs-12\">\n          <input type=\"text\" id=\"nombreProductor\" placeholder=\" * Nombre\" />\n        </div>\n        <div class=\"form-group col-md-6 col-sm-6 col-xs-12\">\n          <input type=\"text\" id=\"descripcionProductor\" placeholder=\"Acerca de m&iacute;\" [(ngModel)]=\"productor.descripcion\"/>\n        </div>\n        <div class=\"form-group col-md-6 col-sm-6 col-xs-12\">\n          <select id=\"tipoDocumento\" [(ngModel)]=\"productor.tipo_documento\">\n            <option value=\"-1\">-- Tipo de Documento --</option>\n            <option value=\"1\">C&eacute;dula de ciudadan&iacute;a</option>\n          </select>\n        </div>\n        <div class=\"form-group col-md-6 col-sm-6 col-xs-12\">\n          <input type=\"text\" id=\"numeroDocumentoProductor\" placeholder=\"N&uacute;mero de documento\" [(ngModel)]=\"productor.documento\"/>\n        </div>\n        <div class=\"form-group col-md-6 col-sm-6 col-xs-12\">\n          <input type=\"text\" id=\"direccionProductor\" placeholder=\"Direcci&oacute;n\" [(ngModel)]=\"productor.direccion\"/>\n        </div>\n        <div class=\"form-group col-md-6 col-sm-6 col-xs-12\">\n          <select id=\"cooperativa\" [(ngModel)]=\"productor.cooperativa\">\n            <option value=\"-1\">-- Cooperativa --</option>\n            <option *ngFor=\"let cooperativa of cooperativas\" value=\"{{cooperativa.id}}\">{{cooperativa.nombre}}</option>\n          </select>\n        </div>\n        <div class=\"form-group col-md-12\">\n          <div class=\"col-md-6 col-md-offset-3\">\n            <label for=\"foto\">Foto*:</label>\n            <input type=\"file\" id=\"foto\" #entradaFoto (change)=\"loadFoto(entradaFoto)\">\n            <img src=\"{{productor.foto}}\" width=\"200\" >\n          </div>\n          <div class=\"col-md-6 col-md-offset-3\">\n            <agm-map class=\"registro-map\" [latitude]=\"marker.latitud\" [longitude]=\"marker.longitud\" (mapClick)=\"mapClicked($event)\">\n              <agm-marker [latitude]=\"marker.latitud\" [longitude]=\"marker.longitud\"></agm-marker>\n            </agm-map>\n          </div>\n        </div>\n        <div>\n          <button (click)=\"saveProductor()\" class=\"theme-btn btn-style-two ui-state-disabled\">Env&iacute;ar datos</button>\n        </div>\n      </div>\n  </div>\n</section>\n"
 
 /***/ }),
 
@@ -751,6 +985,7 @@ module.exports = "<div class=\"productor-form\">\n  <div class=\"form-item\">\n 
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__productor_service__ = __webpack_require__("../../../../../src/app/productor/productor.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cooperativa_listadoCooperativa_service__ = __webpack_require__("../../../../../src/app/cooperativa/listadoCooperativa.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__agm_core__ = __webpack_require__("../../../../@agm/core/index.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -763,12 +998,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var ProductorRegistroComponent = (function () {
-    function ProductorRegistroComponent(productorService, cooperativaService) {
+    function ProductorRegistroComponent(productorService, cooperativaService, gMaps) {
         this.productorService = productorService;
         this.cooperativaService = cooperativaService;
+        this.gMaps = gMaps;
         this.title = "Registrar Productor";
-        this.productor = {};
+        this.marker = {};
+        this.productor = {
+            "tipo_documento": -1,
+            "cooperativa": -1
+        };
     }
     ProductorRegistroComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -776,12 +1017,33 @@ var ProductorRegistroComponent = (function () {
             .subscribe(function (response) {
             _this.cooperativas = response;
         });
+        if (window.navigator && window.navigator.geolocation) {
+            window.navigator.geolocation.getCurrentPosition(function (position) {
+                _this.marker = {
+                    latitud: position.coords.latitude,
+                    longitud: position.coords.longitude
+                };
+            }, function (error) {
+                switch (error.code) {
+                    case 1:
+                        console.log('Permission Denied');
+                        break;
+                    case 2:
+                        console.log('Position Unavailable');
+                        break;
+                    case 3:
+                        console.log('Timeout');
+                        break;
+                }
+            });
+        }
+        ;
     };
     ProductorRegistroComponent.prototype.saveProductor = function () {
         var _this = this;
         if (this.productor.nombre && this.productor.descripcion && this.productor.tipo_documento
             && this.productor.documento && this.productor.direccion && this.productor.cooperativa
-            && this.productor.foto) {
+            && this.productor.foto && this.marker) {
             this.productorService.setProductor(this.productor).subscribe(function (response) {
                 alert("Su informaci?n fue agregada con ?xito.");
                 _this.productor = {};
@@ -797,6 +1059,12 @@ var ProductorRegistroComponent = (function () {
             reader.readAsDataURL(input.files[0]);
         }
     };
+    ProductorRegistroComponent.prototype.mapClicked = function ($event) {
+        this.marker = {
+            latitud: $event.coords.lat,
+            longitud: $event.coords.lng
+        };
+    };
     return ProductorRegistroComponent;
 }());
 ProductorRegistroComponent = __decorate([
@@ -806,14 +1074,15 @@ ProductorRegistroComponent = __decorate([
         styles: [__webpack_require__("../../../../../src/app/productor/productorRegistro.component.css")],
         providers: [
             __WEBPACK_IMPORTED_MODULE_1__productor_service__["a" /* ProductorService */],
-            __WEBPACK_IMPORTED_MODULE_2__cooperativa_listadoCooperativa_service__["a" /* ListadoCooperativaService */]
+            __WEBPACK_IMPORTED_MODULE_2__cooperativa_listadoCooperativa_service__["a" /* ListadoCooperativaService */],
+            __WEBPACK_IMPORTED_MODULE_3__agm_core__["b" /* GoogleMapsAPIWrapper */]
         ],
         encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_20" /* ViewEncapsulation */].None,
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__productor_service__["a" /* ProductorService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__productor_service__["a" /* ProductorService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__cooperativa_listadoCooperativa_service__["a" /* ListadoCooperativaService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__cooperativa_listadoCooperativa_service__["a" /* ListadoCooperativaService */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__productor_service__["a" /* ProductorService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__productor_service__["a" /* ProductorService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__cooperativa_listadoCooperativa_service__["a" /* ListadoCooperativaService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__cooperativa_listadoCooperativa_service__["a" /* ListadoCooperativaService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__agm_core__["b" /* GoogleMapsAPIWrapper */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__agm_core__["b" /* GoogleMapsAPIWrapper */]) === "function" && _c || Object])
 ], ProductorRegistroComponent);
 
-var _a, _b;
+var _a, _b, _c;
 //# sourceMappingURL=productorRegistro.component.js.map
 
 /***/ }),
