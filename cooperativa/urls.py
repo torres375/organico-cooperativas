@@ -31,5 +31,5 @@ urlpatterns = [
 
     # Consulta de datos
     url(r'^cooperativalist$', views.cooperativasList, name="cooperativas_list"),
-    url(r'consultarCooperativa/(?P<id_cooperativa>.+)/$', views.cooperativasGet, name="ver_cooperativa")
+    url(r'consultarCooperativa/(?P<id>.+)/$', views.cooperativasGet, name="ver_cooperativa")
 ]

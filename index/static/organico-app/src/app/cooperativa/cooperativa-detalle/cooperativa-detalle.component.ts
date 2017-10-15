@@ -1,7 +1,6 @@
 import {Component, OnInit, ElementRef, ChangeDetectorRef} from '@angular/core';
 import {ActivatedRoute, Params, Router} from '@angular/router';
 import {CooperativaService} from './cooperativa.service';
-import 'rxjs/add/operator/switchMap';
 
 @Component({
   selector: 'app-cooperativa-detalle',
@@ -13,91 +12,7 @@ import 'rxjs/add/operator/switchMap';
 })
 export class CooperativaDetalleComponent implements OnInit {
 
-  private cooperativa: any = null;
-
-  styles: any = [
-    {
-      "featureType": "administrative",
-      "elementType": "labels.text.fill",
-      "stylers": [
-        {
-          "color": "#272727"
-        }
-      ]
-    },
-    {
-      "featureType": "landscape",
-      "elementType": "all",
-      "stylers": [
-        {
-          "color": "#f7f7f7"
-        }
-      ]
-    },
-    {
-      "featureType": "poi",
-      "elementType": "all",
-      "stylers": [
-        {
-          "visibility": "on"
-        }
-      ]
-    },
-    {
-      "featureType": "road",
-      "elementType": "all",
-      "stylers": [
-        {
-          "saturation": -20
-        },
-        {
-          "lightness": 20
-        }
-      ]
-    },
-    {
-      "featureType": "road.highway",
-      "elementType": "all",
-      "stylers": [
-        {
-          "visibility": "off"
-        },
-        {
-          "color": "#f5b062"
-        }
-      ]
-    },
-    {
-      "featureType": "road.arterial",
-      "elementType": "labels.icon",
-      "stylers": [
-        {
-          "visibility": "off"
-        }
-      ]
-    },
-    {
-      "featureType": "transit",
-      "elementType": "all",
-      "stylers": [
-        {
-          "visibility": "off"
-        }
-      ]
-    },
-    {
-      "featureType": "water",
-      "elementType": "all",
-      "stylers": [
-        {
-          "color": "#5ec79c"
-        },
-        {
-          "visibility": "on"
-        }
-      ]
-    }
-  ];
+  cooperativa: any = null;
 
   constructor(private element: ElementRef,
               private route: ActivatedRoute,
@@ -120,5 +35,4 @@ export class CooperativaDetalleComponent implements OnInit {
           alert("error al cargar datos");
         });
   }
-
 }

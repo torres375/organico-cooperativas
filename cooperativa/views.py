@@ -3,6 +3,7 @@ from django.views.decorators.csrf import csrf_exempt
 import json
 from django.http import HttpResponse, JsonResponse
 from rest_framework.renderers import JSONRenderer
+from rest_framework.decorators import api_view
 from cooperativa.models import Cooperativa
 from cooperativa.serializers import CooperativaSerializer
 
@@ -26,12 +27,11 @@ def cooperativasList(request):
         return modeloJSON(serializer.data)
 
 @csrf_exempt
-def cooperativasGet(request, id_cooperativa):
-    if (request.method == 'GET'):
-        cooperativa = get_object_or_404(Cooperativa, id=id_cooperativa)
-        cooperativas = Cooperativa.objects.all().filter(id=id_cooperativa)
-        serializer = CooperativaSerializer(cooperativas, many=True)
-        return modeloJSON(serializer.data)
+@api_view(['GET'])
+def cooperativasGet(request, id):
+    cooperativa = get_object_or_404(Cooperativa, id=id)
+    serializer = CooperativaSerializer(cooperativa)
+    return modeloJSON(serializer.data)
 
 @csrf_exempt
 def guardarCooperativa(request):
