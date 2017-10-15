@@ -17,6 +17,7 @@ export class ProductorService {
     getProductor(): Observable<string[]> {
         return this.http.get('/productor/service')
             .map(response => <string[]>response.json());
+        //console.log("texto");
 
     }
 

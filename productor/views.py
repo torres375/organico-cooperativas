@@ -16,6 +16,9 @@ def productorAdmin(request):
     context = {}
     return render(request, 'productor.html', context)
 
+def productorLista(request):
+    context = {}
+    return render(request, 'productor-lista.html', context)
 
 def productorDetail(request, id):
     productor = get_object_or_404(Productor, id=id)

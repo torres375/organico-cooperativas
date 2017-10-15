@@ -19,9 +19,13 @@ from django.views.generic import TemplateView
 from . import views
 
 urlpatterns = [
+    # views
     url(r'^$', views.productorAdmin, name="home_productor"),
     url(r'^registro/$', views.productorAdmin, name="registrar_productor"),
-    url(r'^service$', views.productoresList, name="servicios_productor"),
+    url(r'^lista', views.productorLista, name="listar_productor"),
     url(r'^detalle/(?P<id>.+)$', views.productorDetail, name='detalle_productor'),
+
+    # rest services
+    url(r'^service$', views.productoresList, name="servicios_productor"),
     url(r'^get/(?P<id>.+)$', views.productorGet, name='get_productor'),
 ]

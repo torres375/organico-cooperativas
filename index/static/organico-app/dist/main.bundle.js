@@ -85,17 +85,23 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_common__ = __webpack_require__("../../../common/@angular/common.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__agm_core__ = __webpack_require__("../../../../@agm/core/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__cooperativa_listadoCooperativa_component__ = __webpack_require__("../../../../../src/app/cooperativa/listadoCooperativa.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__cooperativa_crearCooperativa_component__ = __webpack_require__("../../../../../src/app/cooperativa/crearCooperativa.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__productor_productorRegistro_component__ = __webpack_require__("../../../../../src/app/productor/productorRegistro.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__productor_productor_detalle_productor_detalle_component__ = __webpack_require__("../../../../../src/app/productor/productor-detalle/productor-detalle.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_platform_browser_animations__ = __webpack_require__("../../../platform-browser/@angular/platform-browser/animations.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__angular_material__ = __webpack_require__("../../../material/esm5/material.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__cooperativa_listadoCooperativa_component__ = __webpack_require__("../../../../../src/app/cooperativa/listadoCooperativa.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__cooperativa_crearCooperativa_component__ = __webpack_require__("../../../../../src/app/cooperativa/crearCooperativa.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__productor_productorRegistro_component__ = __webpack_require__("../../../../../src/app/productor/productorRegistro.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__productor_productor_detalle_productor_detalle_component__ = __webpack_require__("../../../../../src/app/productor/productor-detalle/productor-detalle.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__productor_productor_lista_productor_lista_component__ = __webpack_require__("../../../../../src/app/productor/productor-lista/productor-lista.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
+
 
 
 
@@ -116,44 +122,51 @@ var AppModule = (function () {
 AppModule = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["M" /* NgModule */])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* AppComponent */],
-            __WEBPACK_IMPORTED_MODULE_8__cooperativa_listadoCooperativa_component__["a" /* ListadoCooperativaComponent */],
-            __WEBPACK_IMPORTED_MODULE_9__cooperativa_crearCooperativa_component__["a" /* CrearCooperativaComponent */],
-            __WEBPACK_IMPORTED_MODULE_10__productor_productorRegistro_component__["a" /* ProductorRegistroComponent */],
-            __WEBPACK_IMPORTED_MODULE_11__productor_productor_detalle_productor_detalle_component__["a" /* ProductorDetalleComponent */],
+            __WEBPACK_IMPORTED_MODULE_9__app_component__["a" /* AppComponent */],
+            __WEBPACK_IMPORTED_MODULE_10__cooperativa_listadoCooperativa_component__["a" /* ListadoCooperativaComponent */],
+            __WEBPACK_IMPORTED_MODULE_11__cooperativa_crearCooperativa_component__["a" /* CrearCooperativaComponent */],
+            __WEBPACK_IMPORTED_MODULE_12__productor_productorRegistro_component__["a" /* ProductorRegistroComponent */],
+            __WEBPACK_IMPORTED_MODULE_13__productor_productor_detalle_productor_detalle_component__["a" /* ProductorDetalleComponent */],
+            __WEBPACK_IMPORTED_MODULE_14__productor_productor_lista_productor_lista_component__["a" /* ProductorListaComponent */],
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
             __WEBPACK_IMPORTED_MODULE_2__angular_http__["c" /* HttpModule */],
-            __WEBPACK_IMPORTED_MODULE_4__angular_forms__["a" /* FormsModule */],
+            __WEBPACK_IMPORTED_MODULE_4__angular_forms__["c" /* FormsModule */],
+            __WEBPACK_IMPORTED_MODULE_7__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
+            __WEBPACK_IMPORTED_MODULE_8__angular_material__["a" /* MatTableModule */],
             __WEBPACK_IMPORTED_MODULE_6__agm_core__["a" /* AgmCoreModule */].forRoot({
                 apiKey: 'AIzaSyArw7TOl_K1zuxYi_8nR6niG5kBTyegHfU'
             }),
             __WEBPACK_IMPORTED_MODULE_3__angular_router__["c" /* RouterModule */].forRoot([
                 {
                     path: 'cooperativa/crearCooperativa',
-                    component: __WEBPACK_IMPORTED_MODULE_9__cooperativa_crearCooperativa_component__["a" /* CrearCooperativaComponent */]
+                    component: __WEBPACK_IMPORTED_MODULE_11__cooperativa_crearCooperativa_component__["a" /* CrearCooperativaComponent */]
                 },
                 {
                     path: 'cooperativa/listadoCooperativa',
-                    component: __WEBPACK_IMPORTED_MODULE_8__cooperativa_listadoCooperativa_component__["a" /* ListadoCooperativaComponent */]
+                    component: __WEBPACK_IMPORTED_MODULE_10__cooperativa_listadoCooperativa_component__["a" /* ListadoCooperativaComponent */]
                 },
                 {
                     path: 'cooperativa/editarCooperativa',
-                    component: __WEBPACK_IMPORTED_MODULE_9__cooperativa_crearCooperativa_component__["a" /* CrearCooperativaComponent */]
+                    component: __WEBPACK_IMPORTED_MODULE_11__cooperativa_crearCooperativa_component__["a" /* CrearCooperativaComponent */]
                 },
                 {
                     path: 'productor/registro',
-                    component: __WEBPACK_IMPORTED_MODULE_10__productor_productorRegistro_component__["a" /* ProductorRegistroComponent */]
+                    component: __WEBPACK_IMPORTED_MODULE_12__productor_productorRegistro_component__["a" /* ProductorRegistroComponent */]
                 },
                 {
                     path: 'productor/detalle/:id',
-                    component: __WEBPACK_IMPORTED_MODULE_11__productor_productor_detalle_productor_detalle_component__["a" /* ProductorDetalleComponent */]
+                    component: __WEBPACK_IMPORTED_MODULE_13__productor_productor_detalle_productor_detalle_component__["a" /* ProductorDetalleComponent */]
+                },
+                {
+                    path: 'productor/lista',
+                    component: __WEBPACK_IMPORTED_MODULE_14__productor_productor_lista_productor_lista_component__["a" /* ProductorListaComponent */]
                 }
             ])
         ],
         providers: [{ provide: __WEBPACK_IMPORTED_MODULE_5__angular_common__["a" /* APP_BASE_HREF */], useValue: '/' }],
-        bootstrap: [__WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* AppComponent */]]
+        bootstrap: [__WEBPACK_IMPORTED_MODULE_9__app_component__["a" /* AppComponent */]]
     })
 ], AppModule);
 
@@ -547,6 +560,114 @@ var _a, _b, _c, _d, _e;
 
 /***/ }),
 
+/***/ "../../../../../src/app/productor/productor-lista/productor-lista.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+exports.i(__webpack_require__("../../../../css-loader/index.js?{\"sourceMap\":false,\"importLoaders\":1}!../../../../postcss-loader/index.js?{\"ident\":\"postcss\"}!../../../material/prebuilt-themes/indigo-pink.css"), "");
+
+// module
+exports.push([module.i, "/*.example-container {\n  display: flex;\n  flex-direction: column;\n  max-height: 500px;\n  min-width: 300px;\n}\n\n.mat-table {\n  overflow: auto;\n  max-height: 500px;\n}*/\n\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/productor/productor-lista/productor-lista.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<!--Page Title-->\n<section class=\"page-title\" style=\"background-image:url(/static/images/background/bg-page-title-1a.jpg);\">\n    <div class=\"auto-container\">\n        <h1>Productores</h1>\n    </div>\n</section>\n\n<!--Shop Section-->\n<section class=\"shop-section\">\n    <div class=\"auto-container\">\n        <div class=\"example-container mat-elevation-z8\">\n            <mat-table #table [dataSource]=\"dataSource\">\n\n                <!--- Note that these columns can be defined in any order.\n                      The actual rendered columns are set as a property on the row definition\" -->\n\n                <!-- Name Column -->\n                <ng-container matColumnDef=\"foto\">\n                    <mat-header-cell *matHeaderCellDef> Foto</mat-header-cell>\n                    <mat-cell *matCellDef=\"let element\"> <img src=\"{{ element.foto }}\" style=\"width: 80%;\"/></mat-cell>\n                </ng-container>\n\n                <!-- Name Column -->\n                <ng-container matColumnDef=\"nombre\">\n                    <mat-header-cell *matHeaderCellDef> Nombre</mat-header-cell>\n                    <mat-cell *matCellDef=\"let element\"> {{ element.nombre }} </mat-cell>\n                </ng-container>\n\n                <!-- Weight Column -->\n                <ng-container matColumnDef=\"documento\">\n                    <mat-header-cell *matHeaderCellDef> Documento</mat-header-cell>\n                    <mat-cell *matCellDef=\"let element\"> {{ element.documento }} </mat-cell>\n                </ng-container>\n\n                <ng-container matColumnDef=\"id\">\n                    <mat-header-cell *matHeaderCellDef> Acciones</mat-header-cell>\n                    <mat-cell *matCellDef=\"let element\"><a href=\"detalle/{{ element.id }}\">Ver</a></mat-cell>\n                </ng-container>\n\n                <mat-header-row *matHeaderRowDef=\"displayedColumns\"></mat-header-row>\n                <mat-row *matRowDef=\"let row; columns: displayedColumns;\"></mat-row>\n            </mat-table>\n        </div>\n    </div>\n</section>\n\n\n\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/productor/productor-lista/productor-lista.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProductorListaComponent; });
+/* unused harmony export ProductorDataSource */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_cdk_collections__ = __webpack_require__("../../../cdk/esm5/collections.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__ = __webpack_require__("../../../../rxjs/Observable.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_observable_of__ = __webpack_require__("../../../../rxjs/add/observable/of.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_observable_of___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_observable_of__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__productor_service__ = __webpack_require__("../../../../../src/app/productor/productor.service.ts");
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var ProductorListaComponent = (function () {
+    function ProductorListaComponent(productorServices) {
+        this.productorServices = productorServices;
+        this.displayedColumns = ['foto', 'nombre', 'documento', 'id'];
+        this.dataSource = null;
+    }
+    ProductorListaComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.productorServices.getProductor()
+            .subscribe(function (productores) {
+            _this.productores = productores;
+            _this.dataSource = new ProductorDataSource(_this.productores);
+        });
+    };
+    return ProductorListaComponent;
+}());
+ProductorListaComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
+        selector: 'app-productor-lista',
+        template: __webpack_require__("../../../../../src/app/productor/productor-lista/productor-lista.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/productor/productor-lista/productor-lista.component.css")],
+        providers: [__WEBPACK_IMPORTED_MODULE_4__productor_service__["a" /* ProductorService */]]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_4__productor_service__["a" /* ProductorService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__productor_service__["a" /* ProductorService */]) === "function" && _a || Object])
+], ProductorListaComponent);
+
+var ProductorDataSource = (function (_super) {
+    __extends(ProductorDataSource, _super);
+    function ProductorDataSource(data) {
+        var _this = _super.call(this) || this;
+        _this.data = data;
+        return _this;
+    }
+    /** Connect function called by the table to retrieve one stream containing the data to render. */
+    ProductorDataSource.prototype.connect = function () {
+        return __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["Observable"].of(this.data);
+    };
+    ProductorDataSource.prototype.disconnect = function () { };
+    return ProductorDataSource;
+}(__WEBPACK_IMPORTED_MODULE_1__angular_cdk_collections__["a" /* DataSource */]));
+
+var _a;
+//# sourceMappingURL=productor-lista.component.js.map
+
+/***/ }),
+
 /***/ "../../../../../src/app/productor/productor.service.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -579,6 +700,7 @@ var ProductorService = (function () {
     ProductorService.prototype.getProductor = function () {
         return this.http.get('/productor/service')
             .map(function (response) { return response.json(); });
+        //console.log("texto");
     };
     ProductorService.prototype.getProd = function (id) {
         return this.http.get('/productor/get/' + id)
